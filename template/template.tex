@@ -1,65 +1,83 @@
+%%%%%%%%%% BEGIN PREAMBLE %%%%%%%%%%
 \documentclass[11pt]{memoir}
+%%%%% PACKAGES %%%%%
 \usepackage[top=2.54cm, bottom=2.54cm, left=3cm, right=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{lipsum}
 \usepackage{amsmath}
-\makeatletter
 \usepackage{amssymb}
 \usepackage[font={scriptsize}]{caption}
 \usepackage{float} 
 \usepackage{changepage}
-\renewcommand*{\printchaptername}{\hspace*{-2cm}\chapnamefont\@chapapp}%
-\renewcommand*{\printchaptertitle}[1]{\hspace*{-2cm}\chaptitlefont #1}%
+
 \makeatletter
+\renewcommand*{\printchaptername}{\hspace*{-2cm}\chapnamefont\@chapapp}
+\renewcommand*{\printchaptertitle}[1]{\hspace*{-2cm}\chaptitlefont #1}
+\makeatletter
+%%%%% END PREABMLE %%%%%%
 \begin{document}
 \chapter{This is the chapter title}
 As you can see the chapter title is offset from the text, if you wish to change the margins at all before finalise the template just do that and then do a pull request.
+%
 \section{Equation formatting options}
-Section heading is not offset, perhaps we could change that, it's up to you? There are several different options for equations, I think there are 3 major things to think about:
+Section heading is not offset, perhaps we could change that, it's up to you?
+ There are several different options for equations, I think there are 3 major things to think about:
+%
 \begin{enumerate}
 	\item Vectors
 	\item alignment
 	\item problems?
 \end{enumerate}
+%
 \subsection{1 - Vectors}
 The options for vector are really limited to bold or underlining, here are some examples I also included the arrow on the top but i'm not sure it looks too great:
+%
 $$\mathbf{\nabla}\times\mathbf{E} = \mathbf{\dot{B}}$$
+%
 $$\pmb{\nabla}\times\pmb{E} = \pmb{\dot{B}}$$
+%
 $$\underline{\nabla}\times\underline{E} = \underline{\dot{B}}$$
+%
 $$\vec{\nabla}\times\vec{E} = \vec{\dot{B}}$$
+%
 \subsection{2 - alignment}
 This is really concerning lots of equation in a row for a long derivation, i'll give 2 examples and see what you think.
+%
 $$\frac{1}{2}mv^2=\frac{3}{2}K_BT + A - A$$
+%
 $$v^2=\frac{3K_BT}{m}$$
+%
 $$v=\sqrt{\frac{3K_BT}{m}}$$
+%
 In that example the equations are all aligned in the middle
-\begin{align*}
-\frac{1}{2}mv^2&=\frac{3}{2}K_BT + A - A\\
-v^2&=\frac{3K_BT}{m}\\
-v&=\sqrt{\frac{3K_BT}{m}}\\
+%
+\begin{align*}	
+	\frac{1}{2}mv^2&=\frac{3}{2}K_BT + A - A\\
+	v^2&=\frac{3K_BT}{m}\\
+	v&=\sqrt{\frac{3K_BT}{m}}\\
 \end{align*}
+%
 Now all the equations are aligned at the equals sign, there's arguments for both but generally I think the first one looks more natural but its up to you.
+%
 \subsection{3 - problems}
-For problems and examples I want to copy the Griffiths book, ill show below.\\
+For problems and examples I want to copy the Griffiths book, I'll show below.\\
+%
 \noindent\rule[0.2ex]{\linewidth}{0.1cm}
 \subsubsection{Examples 1.1}
 \begin{adjustwidth}{1cm}{1cm}
-\begin{enumerate}
-\item Using maths, complete the following
-\begin{enumerate}
-	\item Derive time
-	\item Show that the soul survives after death
-\end{enumerate}
-\item By considering the twin paradox show:
-\begin{enumerate}
-	\item Special relativity is wrong
-	\item Kill yourself
-\end{enumerate}
-\end{enumerate}
+	\begin{enumerate}
+		\item Using maths, complete the following
+		\begin{enumerate}
+			\item Derive time
+			\item Show that the soul survives after death
+		\end{enumerate}
+		\item By considering the twin paradox show:
+		\begin{enumerate}
+			\item Special relativity is wrong
+			\item Kill yourself
+		\end{enumerate}
+	\end{enumerate}
 \end{adjustwidth}
 \noindent\rule[0.5ex]{\linewidth}{0.1cm}
-
-
-
-
+%
 \end{document}
