@@ -15,6 +15,20 @@
 	{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
 \titlespacing*{\chapter}{-.5in}{.5pt}{40pt}
 
+%%%%% CUSTOM ENVIRONMENTS %%%%%
+% "Examples" environment
+\newenvironment{examples}[1][]
+	{\refstepcounter{subsection}
+		\par
+		\noindent\rule[0.2ex]{\linewidth}{0.1cm}
+		\begin{adjustwidth}{1cm}{1cm}
+		\medskip
+		\noindent \textbf{Example~\thesubsection #1} \rmfamily}
+	{\par
+		\end{adjustwidth}
+		\noindent\rule[0.2ex]{\linewidth}{0.1cm}
+		\medskip}
+
 %%%%% END PREABMLE %%%%%%
 \begin{document}
 \chapter{This is the chapter title}
@@ -71,22 +85,18 @@ Now all the equations are aligned at the equals sign, there's arguments for both
 \subsection{3 - problems}
 For problems and examples I want to copy the Griffiths book, I'll show below.\\
 %
-\noindent\rule[0.2ex]{\linewidth}{0.1cm}
-\subsubsection{Examples 1.1}
-\begin{adjustwidth}{1cm}{1cm}
+\begin{examples}
 	\begin{enumerate}
-		\item Using maths, complete the following
-		\begin{enumerate}
-			\item Derive time
-			\item Show that the soul survives after death
-		\end{enumerate}
-		\item By considering the twin paradox show:
-		\begin{enumerate}
-			\item Special relativity is wrong
-			\item Kill yourself
-		\end{enumerate}
+	\item Using maths, complete the following
+	\begin{enumerate}
+		\item Derive time
+		\item Show that the soul survives after death
 	\end{enumerate}
-\end{adjustwidth}
-\noindent\rule[0.5ex]{\linewidth}{0.1cm}
-%
+	\item By considering the twin paradox show:
+	\begin{enumerate}
+		\item Special relativity is wrong
+		\item Kill yourself
+	\end{enumerate}
+\end{enumerate}
+\end{examples}
 \end{document}
