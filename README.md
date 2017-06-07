@@ -11,4 +11,8 @@ The master-doc.tex file will import and compile individual volumes.
 Each volume will be comprised of individual chapters. These chapters
 should be edited in isolation of each volume.
 
-i added this
+================================================================
+PLEASE COMMENT ALL CODE AND MAKE USE WHITESPACE FOR READABILITY.
+================================================================
+Yes, even in TeX. 
+
