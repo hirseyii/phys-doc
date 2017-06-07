@@ -1,5 +1,5 @@
 %%%%%%%%%% BEGIN PREAMBLE %%%%%%%%%%
-\documentclass[11pt]{memoir}
+\documentclass[11pt]{book}
 %%%%% PACKAGES %%%%%
 \usepackage[top=2.54cm, bottom=2.54cm, left=3cm, right=2cm]{geometry}
 \usepackage{graphicx}
@@ -9,11 +9,12 @@
 \usepackage[font={scriptsize}]{caption}
 \usepackage{float} 
 \usepackage{changepage}
+\usepackage{titlesec}
 
-\makeatletter
-\renewcommand*{\printchaptername}{\hspace*{-2cm}\chapnamefont\@chapapp}
-\renewcommand*{\printchaptertitle}[1]{\hspace*{-2cm}\chaptitlefont #1}
-\makeatletter
+\titleformat{\chapter}[display]
+	{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{-.5in}{.5pt}{40pt}
+
 %%%%% END PREABMLE %%%%%%
 \begin{document}
 \chapter{This is the chapter title}
