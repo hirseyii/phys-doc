@@ -17,7 +17,7 @@
 
 %%%%% CUSTOM ENVIRONMENTS %%%%%
 % "Examples" environment
-\newenvironment{examples}[1][]
+\newenvironment{examples}[1][] %DON'T DELETE THESE BRACKETS IT WILL BREAK SHIT
 	{\refstepcounter{subsection}
 		\par
 		\noindent\rule[0.2ex]{\linewidth}{0.1cm}
@@ -28,6 +28,23 @@
 		\end{adjustwidth}
 		\noindent\rule[0.2ex]{\linewidth}{0.1cm}
 		\medskip}
+
+% "cust_figure" environment
+\newenvironment{cust_figure}[2][] %DON'T DELETE THESE BRACKETS IT WILL BREAK SHIT
+	{\par
+		\noindent\rule[0.2ex]{\linewidth}{1pt}
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width=\linewidth]{#1}
+		\captionsetup{font=small}
+		\begin{caption}
+		\medskip}
+	{\par
+		\end{caption}
+		\end{figure}
+		\noindent\rule[0.2ex]{\linewidth}{1pt}
+		\medskip}
+
 
 %%%%% END PREABMLE %%%%%%
 \begin{document}
@@ -99,6 +116,10 @@ For problems and examples I want to copy the Griffiths book, I'll show below.\\
 	\end{enumerate}
 \end{enumerate}
 \end{examples}
+
+\begin{cust_figure}[test-image]
+	this ought to be part of the caption.
+\end{cust_figure}
 
 \include{test_chapter}
 \include{test_chapter_duo}
