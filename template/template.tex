@@ -10,6 +10,7 @@
 \usepackage{float} 
 \usepackage{changepage}
 \usepackage{titlesec}
+\usepackage{caption}
 
 \titleformat{\chapter}[display]
 	{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
@@ -30,17 +31,14 @@
 		\medskip}
 
 % "cust_figure" environment
-\newenvironment{cust_figure}[2][] %DON'T DELETE THESE BRACKETS IT WILL BREAK SHIT
-	{\par
+\newenvironment{cust_figure}[1][] %DON'T DELETE THESE BRACKETS IT WILL BREAK SHIT
+	{\par #1
 		\noindent\rule[0.2ex]{\linewidth}{1pt}
 		\begin{figure}[H]
 		\centering
-		\includegraphics[width=\linewidth]{#1}
 		\captionsetup{font=small}
-		\begin{caption}
-		\medskip}
-	{\par
-		\end{caption}
+		}
+	{
 		\end{figure}
 		\noindent\rule[0.2ex]{\linewidth}{1pt}
 		\medskip}
@@ -117,8 +115,9 @@ For problems and examples I want to copy the Griffiths book, I'll show below.\\
 \end{enumerate}
 \end{examples}
 
-\begin{cust_figure}[test-image]
-	this ought to be part of the caption.
+\begin{cust_figure} 
+	\includegraphics[width=\linewidth]{test-image}
+	\caption{this is a caption}
 \end{cust_figure}
 
 \include{test_chapter}
