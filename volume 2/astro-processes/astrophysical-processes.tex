@@ -43,33 +43,66 @@ hence when integrated over a complete sphere, $\Omega = 4\pi$~sr.
  This corresponds to the area of a sphere with unit radius.
  Considering the fraction of the total surface area, $A$ of a sphere with radius $R$, we find that
 %
-\begin{align*}
+\begin{align}
 	\frac{A}{4\pi R^2} &= \frac{\Omega}{4\pi}
 	\linedrop
 	\Omega &= \frac{A}{R^2}.
-\end{align*}
+	\label{eq:solid_angle}
+\end{align}
 %
 As asserted previously, the solid angle corresponds to the area on a sphere with unit radius.
 %
-\subsubsection{Surface Brightness}
+\subsubsection{Surface brightness}
 Consider an object which a circular region in the sky with radius $\theta_c$.
  We choose to position this object such that it is located at the pole of the coordinate system.
  This is done for convenience such that the setup is rotationally symmetric in $\phi$.
  We can then calculate the flux incident on an aperture.
 %
-\begin{align}
+\begin{align*}
 	F_\nu &= 2\pi I\nu \int_{0}^{\theta_c}\diff\theta \sin(\theta) \cos(\theta)
-\end{align}
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
+	\linedrop
+	F_\nu &= \pi I_\nu \sin^2(\theta_c)
+\end{align*}
+%
+For small $\theta_c$, $\sin(\theta_c) \simeq \tan(\theta_c) = R/r$ where $R$ is the object radius and $r$ is the object-aperture distance, hence
+%
+$$ F_\nu = \pi I_\nu  \left( \frac{R}{r} \right) ^2 \propto \frac{1}{r^2}. $$
+%
+For an isotropically emitting object (such as a star) the flux can be related to the luminosity (total power generated) by
+%
+$$ F = \frac{L}{4\pi r^2}. $$
+%
+%
+%
+\section{Radiative transfer}
+\subsection{Free space}
+We want to know how intensity, $I_\nu$ changes along the path of the ray.
+ Consider two areas placed parallel to each other with a line length $R$ connecting their centres.
+ If the areas are small relative to their separation, then all rays that pass through \emph{both} surfaces are effectively normal to the surfaces.
+ From energy conservation,
+ %
+\begin{align*}
+	\diff E_1 &= \diff E_2
+	\linedrop
+	I_{\nu ,1}\diff A_1 \diff t \diff \nu_1 \diff \Omega_1 &= I_{\nu ,2}\diff A_2 \diff t \diff \nu_2 \diff \Omega_2 ,	
+\end{align*}
+%
+Since, in free space, the frequency remains constant and using equation \ref{eq:solid_angle}:
+%
+\begin{align*}
+		I_{\nu ,1}\diff A_1 \frac{\diff A_2}{R^2} &= I_{\nu ,2}\diff A_1 \frac{\diff A_1}{R^2}
+		\linedrop
+		\implies I_{\nu ,1} &= I_{\nu ,2}.
+\end{align*}
+%
+Given that the two surfaces have arbitrary size, we can conclude that in general, intensity is conserved along ray paths in free space.
+ This is \emph{not} the case for flux.
+ Intensity is conserved since it was defined as per unit solid angle.
+ Hence, for a distance $s$ along the path of a ray,
+%
+$$ \frac{\diff I_\nu}{\diff s} = 0. $$
+%
+This is the equation of radiative transfer in free space.
  
  
  
