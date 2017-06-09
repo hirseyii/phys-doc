@@ -18,7 +18,38 @@ which should be pretty obvious.
   Multiplication is also defined $$(x+iy)(a+ib) = (ax-by)+i(bx+ay)$$
 \subsection{Argand Diagrams}
 An argand diagram is a way of representing a complex number on a 2D plane.
- The real component of $z$ is plotted on the x-axis whilst the imaginary component is plotted on the y-axis. 
-
+ The real component of $z$ is plotted on the x-axis whilst the imaginary component is plotted on the y-axis.
+ %
+ \begin{minipage}[t]{0.47\linewidth}
+ 	\begin{figure}[H]
+ 		\centering
+ 		\includegraphics[width=\linewidth]{complex/argand}
+ 		\captionsetup{font=small} 	
+ 	\end{figure} 
+ \end{minipage}
+ \hspace{0.6cm}
+%
+\begin{minipage}[t]{0.47\linewidth}
+	\vspace{1cm}
+	We can define the modulus 
+	%
+	\begin{align*}
+	\mid z \mid &= \sqrt{x^2+y^2} \\
+	&= (x+iy)(x-iy) \\
+	&= z\overline{z}.
+	\end{align*}
+	%
+	In addition to this, $\theta$ is often referred to as the argument.
+	 Note that the argument is not unique, you can add $2\pi$ to the argument and obtain the same result, so it's often useful to think of the principal value argument adding the contraint that $\theta$ lies between $0$ and $2\pi$
+\end{minipage}
+\begin{examples}
+	We'll start with a few basic examples to refresh your memory, given $z_1=1+i$ \& $z_2=2+3i$:
+	\begin{enumerate}
+		\item Find the cube root of $z_1$
+		\item Find the modulus and argument of $z_1z_2$
+	\end{enumerate}
+\textbf{Answers:} 1. $2^{1/6}exp(\frac{\pi}{12})$, $2^{1/6}exp(\frac{3\pi}{4})$, $2^{1/6}exp(\frac{17\pi}{12})$ \hspace{0.5cm}
+2. $\mid z\mid = \sqrt{26}$, $arg(z)=1.37$
+\end{examples}
 
 
