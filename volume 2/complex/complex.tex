@@ -1,7 +1,7 @@
 \chapter{Complex variables and vector spaces}
 \minitoc
 \pagebreak
-\section{Complex Numbers revision}
+\section{Complex Numbers revision \& mappings}
 \subsection{Basics}
 We start with a basic revision of complex numbers.
  Complex numbers were initially introduced to ensure that every polynomial of degree n has n roots. 
@@ -72,5 +72,16 @@ If we have a complex function, $w=f(z)$, then you can think of this function as 
 	\frac{v^2}{4a^2}=a^2-u \\
 	\frac{v^2}{4b^2}=u+b^2. \\
 	\end{align*}
-These 2 equations are plotted on the left for different values of $a$ and $b$. Remembering that $a$ and $b$ are $x$ and $y$ respectively then the red lines are how lines of constant x in the z-plane map into the w-plane.	
+These 2 equations are plotted on the left for different values of $a$ and $b$.
+ Remembering that $a$ and $b$ are $x$ and $y$ respectively then the red lines are how lines of constant x in the z-plane map into the w-plane.
 \end{minipage}
+\subsection{The argument theorem}
+Consider a function $f(z)$, if $f(z_1)=0$ then $z_1$ will map onto the point $w=0$ in the w-plane.
+ The argument theorem states that if a contour in the z-plane wraps around n roots of $f(z)$ then it's mapping will wrap around $w=0$ n times. 
+ This is illustrated below:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{complex/argthm}
+	\captionsetup{font=small} 	
+\end{figure}
+\noindent Another statement of the argument theorem is that along the path, $C$, the argument of w changes by $2n\pi$ if n zeroes are enclosed by $C$.
