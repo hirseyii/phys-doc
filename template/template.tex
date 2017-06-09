@@ -11,12 +11,17 @@
 \usepackage{changepage}
 \usepackage{titlesec}
 \usepackage{caption}
-\usepackage[]{minitoc}
+\usepackage{minitoc}
+
+% minitoc parameters
 \setcounter{minitocdepth}{2} 
 \setlength{\mtcindent}{24pt} 
 \renewcommand{\mtcfont}{\small\rm} 
-\renewcommand{\mtcSfont}{\small\bf} 
+\renewcommand{\mtcSfont}{\small\bf}
+% Suppress (sub)section printing in main ToC
+\setcounter{tocdepth}{0}
 
+% Change title offset
 \titleformat{\chapter}[display]
 	{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
 \titlespacing*{\chapter}{-.5in}{.5pt}{40pt}
@@ -50,11 +55,12 @@
 
 
 %%%%% END PREABMLE %%%%%%
+\tableofcontents
 \begin{document}
 \dominitoc
 \dominilof
 \dominilot
-	
+
 \chapter{This is the chapter title}
 \minitoc
 
