@@ -107,7 +107,13 @@ If $C$ encloses 1 zero then $C$ wraps around $w=0$ once and therefore the argume
 \end{examples}
 \section{Differentiation}
 \subsection{Cauchy-Reimann conditions}
-The problem with functions of a complex variable is that they may not be differentiable! But how do we know if a function is differentiable? We conclude that the differential of a function must be independent of direction. Now this sounds a bit weird so what does it mean? Lets start with the definition of a derivative, which should be familiar.
+The problem with functions of a complex variable is that they may not be differentiable!
+ But how do we know if a function is differentiable? 
+ We conclude that the differential of a function must be independent of direction. 
+ Now this sounds a bit weird so what does it mean?
+  Lets start with the definition of a derivative, which should be familiar.
 \begin{equation*}
-\frac{df}{dz}
+\frac{\diff f}{\diff z}=\lim_{\delta z\to 0}\frac{f(z+\delta z)-f(z)}{\delta z}
 \end{equation*}
+If we say that $\delta z=\delta x + i\delta y$ then the differential should be the same regardless of whether we set $\delta y=0$ and then approach the limit in the x-direction, or if we set $\delta x=0$ and approach the limit from the y-direction.
+ If they give us different answers then the limit doesn't exist, if the limit does exist then the function is called analytic.
