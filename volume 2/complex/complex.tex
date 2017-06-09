@@ -52,4 +52,25 @@ An argand diagram is a way of representing a complex number on a 2D plane.
 2. $\mid z\mid = \sqrt{26}$, $arg(z)=1.77$
 \end{examples}
 \subsection{Mappings}
-If we have a complex function $w=f(z)$, then you can think of this function as a mapping from the domain, the $z$ complex plane to the co-domain, the $w$ complex plane.
+If we have a complex function, $w=f(z)$, then you can think of this function as a mapping from the domain, the $z$ complex plane, to the co-domain, the $w$ complex plane.
+ For example, consider $w=z^2$, what does this mapping look like?
+  If we assume $w=u(x,y)+iv(x,y)$ we can see that $u=x^2-y^2$ \& $v=2xy$.
+
+\begin{minipage}[t]{0.47\linewidth}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\linewidth]{complex/mapping}
+		\captionsetup{font=small} 	
+	\end{figure} 
+\end{minipage}
+\hspace{0.6cm}
+%
+\begin{minipage}[t]{0.47\linewidth}
+	\vspace{0.3cm}
+	With a little bit of magic algebra, by setting $x=a$ and $y=b$ we can get 2 relationships.
+	\begin{align*}
+	\frac{v^2}{4a^2}=a^2-u \\
+	\frac{v^2}{4b^2}=u+b^2. \\
+	\end{align*}
+These 2 equations are plotted on the left for different values of $a$ and $b$. Remembering that $a$ and $b$ are $x$ and $y$ respectively then the red lines are how lines of constant x in the z-plane map into the w-plane.	
+\end{minipage}
