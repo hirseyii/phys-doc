@@ -5,20 +5,20 @@
 \subsection{Flux \& intensity}
 Recalling from \textit{Introduction to Astrophysics \& Cosmology} we define the energy flux density (or simply flux), $F$ as the power per unit surface area.
 %
-$$ dE = F dA dt $$
+$$ \diff E = F \diff A \diff t $$
 %
 Note that flux is dependant on the orientation of the unit surface with respect to the Poynting vector of the radiation field.
  Flux has units of J/s/m$^2$.
  Often it is more useful to use the \emph{monochromatic} energy flux density, $F_\nu$ where
 %
-$$ dE = F_\nu dA dt d\nu. $$
+$$ \diff E = F_\nu \diff A \diff t \diff \nu. $$
 %
 This gives the energy flux per unit of bandwidth, (frequency interval of radiation) which has units J/s/m$^2$/Hz.
 \par 
 In order to account for the differing directions of photons, the flux is further generalised by defining the specific monochromatic intensity, $I_\nu$.
- This quantifies the power per unit frequency from a range of directions covering a solid angle element $d\Omega$ given by
+ This quantifies the power per unit frequency from a range of directions covering a solid angle element $\diff \Omega$ given by
 %
-$$ dE = I_\nu dA dt d\nu d\Omega. $$
+$$ \diff E = I_\nu \diff A dt \diff \nu \diff \Omega. $$
 %
 This then has units J/s/m$^2$/Hz/sr.
  Unlike flux, the intensity is constant along the direction of propagation of photons (in free space).
@@ -26,18 +26,18 @@ This then has units J/s/m$^2$/Hz/sr.
 From the respective definitions, we can relate flux and intensity by
 %
 \begin{align*}
-	F_\nu dA &= \int \mathbf{I_\nu} \dotp \mathbf{dA} d\Omega
+	F_\nu \diff A &= \int \mathbf{I_\nu} \dotp \mathbf{\diff A} \diff \Omega
 	\linedrop
-	F_\nu dA &= \int I_\nu cos(\theta) dA d\Omega
+	F_\nu \diff A &= \int I_\nu \cos(\theta) \diff A \diff \Omega
 	\linedrop
-	\therefore F_\nu &= \int I_\nu cos(\theta) d\Omega
+	\therefore F_\nu &= \int I_\nu \cos(\theta) \diff \Omega
 \end{align*}
 %
 
 \subsubsection{Solid angles: an aside}
-The solid angle element $d\Omega$ is defined
+The solid angle element $\diff \Omega$ is defined
 %
-$$ d\Omega = sin(\theta) d\theta d\phi , $$
+$$ \diff \Omega = sin(\theta) \diff \theta \diff \phi , $$
 %
 hence when integrated over a complete sphere, $\Omega = 4\pi$~sr.
  This corresponds to the area of a sphere with unit radius.
@@ -50,6 +50,16 @@ hence when integrated over a complete sphere, $\Omega = 4\pi$~sr.
 \end{align*}
 %
 As asserted previously, the solid angle corresponds to the area on a sphere with unit radius.
+%
+\subsubsection{Surface Brightness}
+Consider an object which a circular region in the sky with radius $\theta_c$.
+ We choose to position this object such that it is located at the pole of the coordinate system.
+ This is done for convenience such that the setup is rotationally symmetric in $\phi$.
+ We can then calculate the flux incident on an aperture.
+%
+\begin{align}
+	F_\nu &= 2\pi I\nu \int_{0}^{\theta_c}\diff\theta \sin(\theta) \cos(\theta)
+\end{align}
 
  
  
