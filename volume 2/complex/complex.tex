@@ -15,7 +15,8 @@ In case your memory is that poor, $i$ is the square root of -1.
  Addition of complex numbers is defined as follows $$(x+iy) + (a+ib) = (x+a) + i(y+b) $$
 which should be pretty obvious.
  Subtraction is not defined explicitly but by changing $a$ to $-a$ and $b$ to $-b$.
-  Multiplication is also defined $$(x+iy)(a+ib) = (ax-by)+i(bx+ay)$$
+  Multiplication is also defined $$(x+iy)(a+ib) = (ax-by)+i(bx+ay).$$
+  %
 \subsection{Argand Diagrams}
 An argand diagram is a way of representing a complex number on a 2D plane.
  The real component of $z$ is plotted on the x-axis whilst the imaginary component is plotted on the y-axis.
@@ -34,7 +35,7 @@ An argand diagram is a way of representing a complex number on a 2D plane.
 	We can define the modulus 
 	%
 	\begin{align*}
-	\mid z \mid &= \sqrt{x^2+y^2} \\
+	|z| &= \sqrt{x^2+y^2} \\
 	&= (x+iy)(x-iy) \\
 	&= z\overline{z}.
 	\end{align*}
@@ -49,10 +50,12 @@ An argand diagram is a way of representing a complex number on a 2D plane.
 		\item Find the modulus and argument of $z_1z_2$
 	\end{enumerate}
 \textbf{Answers:} 1. $2^{1/6}exp(\frac{\pi}{12})$, $2^{1/6}exp(\frac{3\pi}{4})$, $2^{1/6}exp(\frac{17\pi}{12})$ \hspace{0.5cm}
-2. $\mid z\mid = \sqrt{26}$, $arg(z)=1.77$
+2. $|z| = \sqrt{26}$, $arg(z)=1.77$
 \end{examples}
 \subsection{Mappings}
 If we have a complex function, $w=f(z)$, then you can think of this function as a mapping from the domain, the $z$ complex plane, to the co-domain, the $w$ complex plane.
+The domain of a function is all of the values that can be input into the function whereas the co-domain is all the values that can be reached by the function.
+When we say $f(z)$ is a mapping we mean that $f(z)$ takes every point on the complex z-plane and moves it to a point on the w-plane.
  For example, consider $w=z^2$, what does this mapping look like?
   If we assume $w=u(x,y)+iv(x,y)$ we can see that $u=x^2-y^2$ \& $v=2xy$.
 
@@ -84,4 +87,27 @@ Consider a function $f(z)$, if $f(z_1)=0$ then $z_1$ will map onto the point $w=
 	\includegraphics[width=\linewidth]{complex/argthm}
 	\captionsetup{font=small} 	
 \end{figure}
-\noindent Another statement of the argument theorem is that along the path, $C$, the argument of w changes by $2n\pi$ if n zeroes are enclosed by $C$.
+\noindent Another statement of the argument theorem is that along the path, $C$, the argument of w changes by $2n\pi$ if n zeroes are enclosed by $C$. 
+If $C$ encloses 1 zero then $C$ wraps around $w=0$ once and therefore the argument of $w$ increases by $2\pi$ around the contour.
+\newpage
+\begin{examples}
+	\begin{enumerate}
+		\item Sketch the curves or regions
+		\begin{enumerate}
+			\item $|z-1|=2$
+			\item $Re[e^z]=1$ for $\frac{-\pi}{2} < y < \frac{\pi}{2}$
+			\item $|z-1|<|z+1|$
+		\end{enumerate}
+		\item Verify the following identities:
+		\begin{enumerate}
+			\item $\sinh(iz)=i\sin(z)$
+			\item $\arcsin(iz)=i$arcsinh$(z)$
+		\end{enumerate}
+	\end{enumerate}
+\end{examples}
+\section{Differentiation}
+\subsection{Cauchy-Reimann conditions}
+The problem with functions of a complex variable is that they may not be differentiable! But how do we know if a function is differentiable? We conclude that the differential of a function must be independent of direction. Now this sounds a bit weird so what does it mean? Lets start with the definition of a derivative, which should be familiar.
+\begin{equation*}
+\frac{df}{dz}
+\end{equation*}
