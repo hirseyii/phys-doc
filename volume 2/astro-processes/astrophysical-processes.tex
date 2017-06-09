@@ -1,15 +1,53 @@
 \chapter{Astrophysical Processes}
 \minitoc
-\section{Quantifying Radiation}
-\subsection{Flux \& Intensity}
+\pagebreak
+\section{Quantifying radiation}
+\subsection{Flux \& intensity}
 Recalling from \textit{Introduction to Astrophysics \& Cosmology} we define the energy flux density (or simply flux), $F$ as the power per unit surface area.
 %
-$$ dE = FdAdt $$
+$$ dE = F dA dt $$
 %
 Note that flux is dependant on the orientation of the unit surface with respect to the Poynting vector of the radiation field.
  Flux has units of J/s/m$^2$.
  Often it is more useful to use the \emph{monochromatic} energy flux density, $F_\nu$ where
 %
-$$ dE = F_\nu dAdTd\nu. $$
+$$ dE = F_\nu dA dt d\nu. $$
 %
 This gives the energy flux per unit of bandwidth, (frequency interval of radiation) which has units J/s/m$^2$/Hz.
+\par 
+In order to account for the differing directions of photons, the flux is further generalised by defining the specific monochromatic intensity, $I_\nu$.
+ This quantifies the power per unit frequency from a range of directions covering a solid angle element $d\Omega$ given by
+%
+$$ dE = I_\nu dA dt d\nu d\Omega. $$
+%
+This then has units J/s/m$^2$/Hz/sr.
+ Unlike flux, the intensity is constant along the direction of propagation of photons (in free space).
+ 
+\subsubsection{Solid angles: an aside}
+The solid angle element $d\Omega$ is defined
+%
+$$ d\Omega = sin(\theta) d\theta d\phi , $$
+%
+hence when integrated over a complete sphere, $\Omega = 4\pi$~sr.
+ This corresponds to the area of a sphere with unit radius.
+ Considering the fraction of the total surface area, $A$ of a sphere with radius $R$, we find that
+%
+\begin{align*}
+	\frac{A}{4\pi R^2} &= \frac{\Omega}{4\pi}
+	\\[0.5\baselineskip]
+	\Omega &= \frac{A}{R^2}.
+\end{align*}
+%
+As asserted previously, the solid angle corresponds to the area on a sphere with unit radius.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
