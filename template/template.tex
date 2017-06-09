@@ -14,10 +14,15 @@
 \usepackage{minitoc}
 
 % minitoc parameters
-\setcounter{minitocdepth}{2} 
-\setlength{\mtcindent}{24pt} 
-\renewcommand{\mtcfont}{\small\rm} 
-\renewcommand{\mtcSfont}{\small\bf}
+
+\setlength{\mtcindent}{24pt}
+\renewcommand{\mtcoffset}{0pt}
+\mtcsetoffset{minitoc}{0pt}
+\setlength{\mtcskipamount}{\bigskipamount}
+
+\setcounter{minitocdepth}{2}  
+\renewcommand{\mtcfont}{\small\rmfamily\upshape\mdseries} 
+\renewcommand{\mtcSfont}{\small\rmfamily\upshape\bfseries}
 % Suppress (sub)section printing in main ToC
 \setcounter{tocdepth}{0}
 
@@ -41,26 +46,23 @@
 		\medskip}
 
 % "cust_figure" environment
-\newenvironment{cust_figure}[1][] %DON'T DELETE THESE BRACKETS IT WILL BREAK SHIT
+\newenvironment{custfigure}[1][] %DON'T DELETE THESE BRACKETS IT WILL BREAK SHIT
 	{\par #1
 		\noindent\rule[0.2ex]{\linewidth}{1pt}
 		\begin{figure}[H]
 		\centering
 		\captionsetup{font=small}
 		}
-	{
-		\end{figure}
+	{\end{figure}
 		\noindent\rule[0.2ex]{\linewidth}{1pt}
 		\medskip}
 
 
 %%%%% END PREABMLE %%%%%%
-\tableofcontents
+
 \begin{document}
-	
-\dominitoc
-\dominilof
-\dominilot
+\dominitoc 
+\tableofcontents
 
 \chapter{This is the chapter title}
 \minitoc
@@ -119,10 +121,10 @@ For problems and examples I want to copy the Griffiths book, I'll show below.\\
 \end{enumerate}
 \end{examples}
 
-\begin{cust_figure} 
+\begin{custfigure} 
 	\includegraphics[width=\linewidth]{test-image}
 	\caption{this is a caption}
-\end{cust_figure}
+\end{custfigure}
 \section{test}
 testy mctestest
 \include{test_chapter}
