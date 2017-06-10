@@ -6,29 +6,31 @@
 We start with a basic revision of complex numbers.
  Complex numbers were initially introduced to ensure that every polynomial of degree n has n roots. 
  A complex number, $z$, can be expressed in 3 forms:
+%
 \begin{enumerate}
 	\item $z=x+iy$
 	\item $z=R(cos\theta+isin\theta)$
 	\item $z=Re^{i\theta}$
 \end{enumerate}
+%
 In case your memory is that poor, $i$ is the square root of -1.
  Addition of complex numbers is defined as follows $$(x+iy) + (a+ib) = (x+a) + i(y+b) $$
 which should be pretty obvious.
  Subtraction is not defined explicitly but by changing $a$ to $-a$ and $b$ to $-b$.
   Multiplication is also defined $$(x+iy)(a+ib) = (ax-by)+i(bx+ay).$$
-  %
+%
 \subsection{Argand Diagrams}
 An argand diagram is a way of representing a complex number on a 2D plane.
  The real component of $z$ is plotted on the x-axis whilst the imaginary component is plotted on the y-axis.
- %
- \begin{minipage}[t]{0.47\linewidth}
- 	\begin{figure}[H]
+%
+\begin{minipage}[t]{0.47\linewidth}
+	\begin{figure}[H]
  		\centering
  		\includegraphics[width=\linewidth]{complex/argand}
  		\captionsetup{font=small} 	
- 	\end{figure} 
- \end{minipage}
- \hspace{0.6cm}
+	\end{figure} 
+\end{minipage}
+\hspace{0.6cm}
 %
 \begin{minipage}[t]{0.47\linewidth}
 	\vspace{1cm}
@@ -43,6 +45,7 @@ An argand diagram is a way of representing a complex number on a 2D plane.
 	In addition to this, $\theta$ is often referred to as the argument.
 	 Note that the argument is not unique, you can add $2\pi$ to the argument and obtain the same result, so it's often useful to think of the principal value argument adding the contraint that $\theta$ lies between $0$ and $2\pi$
 \end{minipage}
+%
 \begin{examples}
 	We'll start with a few basic examples to refresh your memory, given $z_1=1+i$ \& $z_2=2+3i$:
 	\begin{enumerate}
@@ -52,13 +55,14 @@ An argand diagram is a way of representing a complex number on a 2D plane.
 \textbf{Answers:} 1. $2^{1/6}exp(\frac{\pi}{12})$, $2^{1/6}exp(\frac{3\pi}{4})$, $2^{1/6}exp(\frac{17\pi}{12})$ \hspace{0.5cm}
 2. $|z| = \sqrt{26}$, $arg(z)=1.77$
 \end{examples}
+%
 \subsection{Mappings}
 If we have a complex function, $w=f(z)$, then you can think of this function as a mapping from the domain, the $z$ complex plane, to the co-domain, the $w$ complex plane.
 The domain of a function is all of the values that can be input into the function whereas the co-domain is all the values that can be reached by the function.
 When we say $f(z)$ is a mapping we mean that $f(z)$ takes every point on the complex z-plane and moves it to a point on the w-plane.
  For example, consider $w=z^2$, what does this mapping look like?
   If we assume $w=u(x,y)+iv(x,y)$ we can see that $u=x^2-y^2$ \& $v=2xy$.
-
+%
 \begin{minipage}[t]{0.47\linewidth}
 	\begin{figure}[H]
 		\centering
@@ -78,6 +82,8 @@ When we say $f(z)$ is a mapping we mean that $f(z)$ takes every point on the com
 These 2 equations are plotted on the left for different values of $a$ and $b$.
  Remembering that $a$ and $b$ are $x$ and $y$ respectively then the red lines are how lines of constant x in the z-plane map into the w-plane.
 \end{minipage}
+%
+%
 \subsection{The argument theorem}
 Consider a function $f(z)$, if $f(z_1)=0$ then $z_1$ will map onto the point $w=0$ in the w-plane.
  The argument theorem states that if a contour in the z-plane wraps around n roots of $f(z)$ then it's mapping will wrap around $w=0$ n times. 
@@ -90,6 +96,7 @@ Consider a function $f(z)$, if $f(z_1)=0$ then $z_1$ will map onto the point $w=
 \noindent Another statement of the argument theorem is that along the path, $C$, the argument of w changes by $2n\pi$ if n zeroes are enclosed by $C$. 
 If $C$ encloses 1 zero then $C$ wraps around $w=0$ once and therefore the argument of $w$ increases by $2\pi$ around the contour.
 \newpage
+%
 \begin{examples}
 	\begin{enumerate}
 		\item Sketch the curves or regions
@@ -105,6 +112,9 @@ If $C$ encloses 1 zero then $C$ wraps around $w=0$ once and therefore the argume
 		\end{enumerate}
 	\end{enumerate}
 \end{examples}
+%
+%
+%
 \section{Differentiation}
 \subsection{Cauchy-Reimann conditions}
 The problem with functions of a complex variable is that they may not be differentiable!
@@ -112,8 +122,10 @@ The problem with functions of a complex variable is that they may not be differe
  We conclude that the differential of a function must be independent of direction. 
  Now this sounds a bit weird so what does it mean?
   Lets start with the definition of a derivative, which should be familiar.
+%
 \begin{equation*}
 \frac{\diff f}{\diff z}=\lim_{\delta z\to 0}\frac{f(z+\delta z)-f(z)}{\delta z}
 \end{equation*}
+%
 If we say that $\delta z=\delta x + i\delta y$ then the differential should be the same regardless of whether we set $\delta y=0$ and then approach the limit in the x-direction, or if we set $\delta x=0$ and approach the limit from the y-direction.
  If they give us different answers then the limit doesn't exist, if the limit does exist then the function is called analytic.
