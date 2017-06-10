@@ -11,14 +11,20 @@ Note that flux is dependant on the orientation of the unit surface with respect 
  Flux has units of J/s/m$^2$.
  Often it is more useful to use the \emph{monochromatic} energy flux density, $F_\nu$ where
 %
-$$ \diff E = F_\nu \diff A \diff t \diff \nu. $$
+\begin{equation}
+	\diff E = F_\nu \diff A \diff t \diff \nu
+	\label{eq:def_flux}
+\end{equation}
 %
 This gives the energy flux per unit of bandwidth, (frequency interval of radiation) which has units J/s/m$^2$/Hz.
 \par 
 In order to account for the differing directions of photons, the flux is further generalised by defining the specific monochromatic intensity, $I_\nu$.
  This quantifies the power per unit frequency from a range of directions covering a solid angle element $\diff \Omega$ given by
 %
-$$ \diff E = I_\nu \diff A dt \diff \nu \diff \Omega. $$
+\begin{equation}
+	\diff E = I_\nu \diff A dt \diff \nu \diff \Omega.
+	\label{eq:def_intensity}
+\end{equation}
 %
 This then has units J/s/m$^2$/Hz/sr.
  Unlike flux, the intensity is constant along the direction of propagation of photons (in free space).
@@ -92,17 +98,34 @@ Since, in free space, the frequency remains constant and using equation \ref{eq:
 \begin{align*}
 		I_{\nu ,1}\diff A_1 \frac{\diff A_2}{R^2} &= I_{\nu ,2}\diff A_1 \frac{\diff A_1}{R^2}
 		\linedrop
-		\implies I_{\nu ,1} &= I_{\nu ,2}.
+		I_{\nu ,1} &= I_{\nu ,2}.
 \end{align*}
 %
 Given that the two surfaces have arbitrary size, we can conclude that in general, intensity is conserved along ray paths in free space.
  This is \emph{not} the case for flux.
- Intensity is conserved since it was defined as per unit solid angle.
+ Intensity is conserved since it is defined as `per unit solid angle'.
  Hence, for a distance $s$ along the path of a ray,
 %
 $$ \frac{\diff I_\nu}{\diff s} = 0. $$
 %
 This is the equation of radiative transfer in free space.
+%
+%
+\subsection{In a medium}
+We now need  to consider emission generated along the line of sight as well as absorption by the medium.
+ This can be quantified by the equation of radiative transfer in a medium,
+%
+\begin{equation}
+	\frac{\diff I_\nu}{\diff s} = j_\nu - \alpha_\nu I_\nu,
+\end{equation}
+%
+where $j_\nu$ is the \emph{monochromatic emission coefficient} with units J/s/m$^3$/Hz/sr, and $\alpha_\nu$ is the \emph{monochromatic absorption coefficient} with units m$^{-1}$.
+ It is simple to realise that doubling the intensity passing through a medium would in turn double the intensity absorbed per metre.
+ Note that in free space, $j_\nu = 0$ and $\alpha_\nu = 0$.
+\par
+\subsubsection{Emission coefficient}
+From the definition of intensity given by equation \ref{eq:def_intensity}, but changing $\diff E$ to $\delta_E$,
+
  
  
  
