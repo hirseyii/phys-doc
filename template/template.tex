@@ -73,6 +73,13 @@
 	{\end{figure}
 		\noindent\rule[0.2ex]{\linewidth}{1pt}
 		\medskip}
+	
+% "dedication" environment
+\newenvironment{dedication}
+{\thispagestyle{empty}		
+	\ttfamily
+	\raggedleft}          	
+{}  
 
 %%%%%%%%%% CUSTOM MACROS %%%%%%%%%%
 % Align environment linedrop
@@ -86,14 +93,18 @@
 %%%%% END PREABMLE %%%%%%
 
 \begin{document}
-\pagestyle{empty} % Removes page numbers
-
+\frontmatter
+\thispagestyle{empty} % Removes page numbers
 \titleGM % This command includes the title page
-\dominitoc 
-\tableofcontents
+	
+% Dedication
+\newpage
+\begin{dedication}
+	This is where the dedication goes.
+\end{dedication}
 
+\mainmatter
 \pagestyle{plain}
-
 \chapter{This is the chapter title}
 \minitoc
 
