@@ -74,10 +74,22 @@
 		\noindent\rule[0.2ex]{\linewidth}{1pt}
 		\medskip}
 	
+% "dedication" environment
+\newenvironment{dedication}
+	{\thispagestyle{empty}		% no header and footer
+		\vspace*{\stretch{1}}	% some space at the top
+		\itshape             	% the text is in italics
+		\raggedleft}          	% flush to the right margin
+	
+	{\par % end the paragraph
+		\vspace{\stretch{3}} % space at bottom is three times that at the top
+		\clearpage}         % finish off the page
+
+	
 %%%%%%%%%% CUSTOM MACROS %%%%%%%%%%
 % Align environment linedrop
 \newcommand*{\linedrop}{\\[0.5\baselineskip]}
-% Dot product symbol
+% Dot product 
 \newcommand*{\dotp}{\boldsymbol{\cdot}}
 % derivative "d"
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
@@ -86,12 +98,24 @@
 %%%%% END PREABMLE %%%%%%
 
 \begin{document}
-\pagestyle{empty} % Removes page numbers
-
+\frontmatter
+\thispagestyle{empty} % Removes page numbers
 \titleGM % This command includes the title page
+
+% Dedication
+\newpage
+\thispagestyle{empty}
+\itshape
+\raggedleft
+This book is dedicated to C. Haunch, L. Heseltine \& L. Rich\\
+for putting up with all of our physics bullshit.
+
+% Main contents page
 \dominitoc
 \tableofcontents
 
+
+\mainmatter
 \pagestyle{plain}
 % Astrophysical Processes chapter
 \include{astro-processes/astrophysical-processes}
