@@ -117,14 +117,75 @@ We now need  to consider emission generated along the line of sight as well as a
 %
 \begin{equation}
 	\frac{\diff I_\nu}{\diff s} = j_\nu - \alpha_\nu I_\nu,
+	\label{eq:radiative_transfer}
 \end{equation}
 %
-where $j_\nu$ is the \emph{monochromatic emission coefficient} with units J/s/m$^3$/Hz/sr, and $\alpha_\nu$ is the \emph{monochromatic absorption coefficient} with units m$^{-1}$.
+where $j_\nu$ is the \emph{monochromatic emission coefficient} with units J/s/m$^3$/Hz/sr, and $\alpha_\nu$ is the \emph{monochromatic absorption constant} with units m$^{-1}$.
  It is simple to realise that doubling the intensity passing through a medium would in turn double the intensity absorbed per metre.
  Note that in free space, $j_\nu = 0$ and $\alpha_\nu = 0$.
 \par
 \subsubsection{Emission coefficient}
 From the definition of intensity given by equation \ref{eq:def_intensity}, but changing $\diff E$ to $\delta_E$,
+%
+\begin{align}
+	\frac{\diff \delta_E}{\diff s} &= \frac{\diff I_\nu}{\diff s} \diff A \diff t \diff \nu \diff \Omega
+	\linedrop
+	\frac{\diff \delta_E}{\diff s} &= j_\nu \diff A \diff t \diff \nu \diff \Omega
+	\linedrop
+	\therefore \diff \delta_E &= j_\nu \diff V \diff t \diff \nu \diff \Omega.
+	\label{eq:emission_coef}
+\end{align}
+%
+From equation \ref{eq:emission_coef} we can see that $j_\nu$ corresponds to the amount of energy radiated per unit volume\footnote{Note that $\diff V = \diff A \diff s$.}, per unit time, per unit solid angle for a frequency interval.
+\par 
+\subsubsection{Absorption constant}
+By using similar treatment for the absorption, we find that
+%
+\begin{align}
+		\frac{\diff \delta_E}{\diff s} &= -\alpha_\nu I_\nu  \diff A \diff t \diff \nu \diff \Omega
+		\linedrop
+		\frac{\diff \delta_E}{\diff s} &= -\alpha_\nu \delta_E.
+		\label{eq:absorption_const}
+\end{align}
+%
+Equation \ref{eq:absorption_const} implies that $\alpha_\nu \diff s$ represents the fraction of energy that disappears from the radiation field after travelling a length $\diff s$ through the medium.
+\par  
+\subsubsection{Opacity}
+Following from the definition in equation \ref{eq:absorption_const}, we now consider a volume of absorbing particles with number density $n$ and absorption cross section $\sigma_\nu$.
+ Since each particle obscures an area $\sigma_\nu$, the total area blocked is $n\sigma_\nu\diff V$.
+ Also, the fractional area (through which photons flow) that is blocked by absorbers is
+$$ n \sigma_\nu \frac{\diff V}{\diff A} = n \diff s \sigma_\nu, $$
+hence
+% 
+\begin{align*}
+	\alpha_\nu &= n \sigma_\nu	
+	\linedrop
+	\alpha_\nu &= \rho \kappa_\nu.
+\end{align*}
+%
+The \emph{opacity coefficient} $\kappa_\nu$ is defined such that $\sigma_\nu \propto \kappa_\nu$. Also, $\kappa_\nu$ has units m$^2$/kg.
+\par 
+\subsubsection{Optical depth}
+Another useful quantity to define is optical depth $\tau_\nu$, which is a re-scaled distance co-ordinate defined by
+$$ \diff \tau_\nu \equiv \alpha_\nu \diff s, $$
+which provides a more relevan unit to express distance in, rather than metres.
+ The total optical depth can then be defined as
+$$ \tau_\nu (s) = \int_{s_0}^{s} \alpha_\nu \diff s^\prime. $$
+The optical depth becomes particularly useful in the case $j_\nu = 0$.
+ In this situation, the equation of radiative transfer (see equation \ref{eq:radiative_transfer}) becomes
+$$ \diff I_\nu = - I_\nu \diff \tau_\nu. $$
+This differential equation is easy to solve and we find that
+%
+\begin{equation}
+	I_\nu (\tau_\nu) = I_{\nu,0} e^{\tau_\nu}.
+\end{equation}
+%
+
+
+
+
+
+
 
  
  
