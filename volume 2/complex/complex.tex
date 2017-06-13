@@ -56,12 +56,24 @@ An argand diagram is a way of representing a complex number on a 2D plane.
 2. $|z| = \sqrt{26}$, $arg(z)=1.77$
 \end{examples}
 %
-\subsection{Mappings}
-If we have a complex function, $w=f(z)$, then you can think of this function as a mapping from the domain, the $z$ complex plane, to the co-domain, the $w$ complex plane.
-The domain of a function is all of the values that can be input into the function whereas the co-domain is all the values that can be reached by the function.
-When we say $f(z)$ is a mapping we mean that $f(z)$ takes every point on the complex z-plane and moves it to a point on the w-plane.
+\subsection{Functions and Mappings}
+Here we take a slightly abstract and brief aside to talk about functions. 
+Up until slightly over a century ago a mathematicians view of a function is probably very similar to what the reader has now, usually it's a formula that takes in values of a variable, say $x$, and outputs another number, $f(x)$. However, it became clear that this very restrictive definition of a function would not suffice in the modern world, so we need a more abstract definition of a function.
+ The reader may be familiar with this more abstract definition without realising it if they've done any computer programming.
+  For example in python you may want to make a function that takes in inputs from the user, of say 'yes' or 'no' and outputs a 1 if the user inputs 'yes' or a zero if the user inputs 'no'.
+   There are many ways of visualising what a function does, the reader will probably be familiar with a graphical interpretation.
+    However, a more abstract function can be viewed in another way, as a mapping. 
+    
+We need to define the Domain, D and Co-domain (or Range), R of a function with the former corresponding to all the values that can be input to the function and the latter corresponding to all the outputs of the function.
+The most useful way to think about this is in terms of sets, a function takes vales from a set, D and assigns each value in D a corresponding value in R.
+For example in our programming analogy we take the Domain as {'yes','no'} and the range as {1,0}. 
+Anyone making this kind of function will know that they will have to either restrict the users inputs to just yes or no, perhaps by only displaying 2 buttons, or by including an error message and loop if the user inputs something unexpected.
+This is because the domain of this function is {'yes','no'} so this function can only accept the value 'yes' and 'no'.
+This more abstract definition of a function can be used to understand functions of a complex variable.
+We can consider the function $f(z)$ as a mapping, taking the values from the complex plane, Z, to another complex plane, W.
+ Every complex number in the Domain of the function will have a corresponding value in the range. However now that we would need 4 dimensions to present this as a graph like we do for functions of one variable, so it's easier to visualise as changing from one plane to another.
  For example, consider $w=z^2$, what does this mapping look like?
-  If we assume $w=u(x,y)+iv(x,y)$ we can see that $u=x^2-y^2$ \& $v=2xy$.
+  If we assume $w=X(x,y)+iY(x,y)$ we can see that $X=x^2-y^2$ \& $Y=2xy$.
 %
 \begin{minipage}[t]{0.47\linewidth}
 	\begin{figure}[H]
@@ -76,10 +88,10 @@ When we say $f(z)$ is a mapping we mean that $f(z)$ takes every point on the com
 	\vspace{0.3cm}
 	With a little bit of magic algebra, by setting $x=a$ and $y=b$ we can get 2 relationships.
 	\begin{align*}
-	\frac{v^2}{4a^2}=a^2-u \\
-	\frac{v^2}{4b^2}=u+b^2. \\
+	\frac{Y^2}{4a^2}=a^2-X \\
+	\frac{Y^2}{4b^2}=X+b^2. \\
 	\end{align*}
-These 2 equations are plotted on the left for different values of $a$ and $b$.
+These 2 equations [and you should check these] are plotted on the left for different values of $a$ and $b$.
  Remembering that $a$ and $b$ are $x$ and $y$ respectively then the red lines are how lines of constant x in the z-plane map into the w-plane.
 \end{minipage}
 %
@@ -95,7 +107,6 @@ Consider a function $f(z)$, if $f(z_1)=0$ then $z_1$ will map onto the point $w=
 \end{figure}
 \noindent Another statement of the argument theorem is that along the path, $C$, the argument of w changes by $2n\pi$ if n zeroes are enclosed by $C$. 
 If $C$ encloses 1 zero then $C$ wraps around $w=0$ once and therefore the argument of $w$ increases by $2\pi$ around the contour.
-\newpage
 %
 \begin{examples}
 	\begin{enumerate}
@@ -110,6 +121,9 @@ If $C$ encloses 1 zero then $C$ wraps around $w=0$ once and therefore the argume
 			\item $\sinh(iz)=i\sin(z)$
 			\item $\arcsin(iz)=i$arcsinh$(z)$
 		\end{enumerate}
+		\item Sketch the mapping of $f(z)=e^z$, like in the example above.
+		
+		 [hint: $e^z=e^{x+iy}=e^xe^{iy}$]
 	\end{enumerate}
 \end{examples}
 %
@@ -129,3 +143,21 @@ The problem with functions of a complex variable is that they may not be differe
 %
 If we say that $\delta z=\delta x + i\delta y$ then the differential should be the same regardless of whether we set $\delta y=0$ and then approach the limit in the x-direction, or if we set $\delta x=0$ and approach the limit from the y-direction.
  If they give us different answers then the limit doesn't exist, if the limit does exist then the function is called analytic.
+ 
+ Sometimes rather than using X and Y to denote the real and imaginary parts of $f(z)$ we using $u$ and $v$ to avoid confusion.
+  Now we will figure out what criteria a function must satisfy in order to be analytic, we can start with a taylor expansion of $f(z)$ to obtain
+ \begin{equation}
+ \label{totaldcmplxv}
+ \delta f=\delta x \left(\frac{\partial u}{\partial x} + i \frac{\partial v}{\partial x}\right) + \delta y \left(\frac{\partial u}{\partial y}+i\frac{\partial v}{\partial y}\right) + O\left({\delta x}^2,{\delta y}^2\right)
+ \end{equation}
+ which we will use to derive the so called Cauchy-Reimann conditions for an analytic function. If we use the definition of the derivative and set $\delta y=0$ in equation \ref{totaldcmplxv} we can show:
+ \begin{equation*}
+ \frac{\diff f}{\diff z}=\lim_{\delta x\to 0}\left(\frac{\partial u}{\partial x} + i \frac{\partial v}{\partial x}\right) + O(\delta x).
+ \end{equation*}
+Similarly for $\delta x=0$ but remembering we're taking the limit as $i\delta y$ goes to zero we can show:
+\begin{equation*}
+\frac{\diff f}{\diff z}=\lim_{\delta y\to 0}\frac{1}{i}\left(\frac{\partial u}{\partial y} + i \frac{\partial v}{\partial y}\right) + O(\delta y).
+\end{equation*}
+Requiring that these 2 expressions are equal to each other, and remembering $1/i=-i$ we can obtain the Cauchy-Reimann conditions. 
+ 
+ 
