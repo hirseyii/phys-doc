@@ -1,4 +1,4 @@
-\chapter{Complex variables and vector spaces}
+q\chapter{Complex variables and vector spaces}
 \minitoc
 \pagebreak
 \section{Complex Numbers revision \& mappings}
@@ -57,24 +57,26 @@ An argand diagram is a way of representing a complex number on a 2D plane.
 \end{examples}
 %
 \subsection{Functions and Mappings}
-Here we take a slightly abstract and brief aside to talk about functions. 
-Up until slightly over a century ago a mathematician's view of a function was probably very similar to what the reader has now. Usually it's a formula that takes in values of a variable, say $x$, and outputs another number, $f(x)$. However, it became clear that this very restrictive definition of a function would not suffice in the modern world, so we needed a more abstract definition of a function.
- The reader may be familiar with this more abstract definition without realising it, if they've done any computer programming.
-  For example in python you may want to make a function that takes in inputs from the user, of say 'yes' or 'no' and outputs a 1 if the user inputs 'yes' or a zero if the user inputs 'no'.
-   There are many ways of visualising what a function does, the reader will probably be familiar with a graphical interpretation.
-    However, a more abstract function can be viewed in another way, as a mapping. 
-    
-We need to define the Domain, D and Co-domain (or Range), R of a function with the former corresponding to all the values that can be input to the function and the latter corresponding to all the outputs of the function.
-The most useful way to think about this is in terms of sets, a function takes vales from a set, D and assigns each value in D a corresponding value in R.
-For example in our programming analogy we take the Domain as \{'yes','no'\} and the range as \{1,0\}. 
-Anyone making this kind of function will know that they will have to either restrict the users inputs to just yes or no, perhaps by only displaying 2 buttons, or by including an error message and loop if the user inputs something unexpected.
-This is because the domain of this function is \{'yes','no'\} so this function can only accept the values 'yes' and 'no'.
-
+Here we take a slightly abstract and brief aside to talk about functions.
+ Up until slightly over a century ago a mathematician's view of a function was probably very similar to what the reader has now.
+ Usually it is a formula that takes in values of a variable, say $x$, and outputs another number, $f(x)$.
+ However, it became clear that this very restrictive definition of a function would not suffice in the modern world, so we needed a more abstract definition.
+ The reader may be familiar with this more abstract definition, without realising it, if they've done any computer programming.
+ For example, in \textbf{Python} you may want to make a function that takes in inputs from the user of `yes' or `no', and outputs `1' if the user inputs `yes' or a `0' if the user inputs `no'.
+ There are many ways of visualising what a function does, the reader will probably be familiar with a graphical interpretation.
+ Alternatively, a more abstract function can be viewed as a mapping. 
+\par     
+We need to define the \emph{domain}, D and \emph{co-domain} (or range), R of a function with the former corresponding to all the values that can be input to the function, and the latter corresponding to all outputs of the function.
+ The most useful way to think about this is in terms of sets: a function takes vales from a set, D, and assigns each value in D a corresponding value in R.
+ For example in our programming analogy we take the domain as \{`yes',`no'\} and the range as \{`1',`0'\}. 
+ Anyone making this kind of function will know that they will have to restrict the user's inputs to just `yes' or `no', either by only displaying 2 buttons, or by including an error message and loop if the user inputs something unexpected.
+ This is because the domain of this function is \{`yes',`no'\} so this function can only accept the values `yes' and `no'.
+\par 
 This more abstract definition of a function can be used to understand functions of a complex variable.
-We can consider the function $f(z)$ as a mapping, taking the values from the complex plane, Z, to another complex plane, W.
- Every complex number in the Domain of the function will have a corresponding value in the range. However now we would need 4 dimensions to present this as a graph like we do for functions of one variable, so it's easier to visualise as changing from one plane to another.
+ We can consider the function $f(z)$ as a mapping, taking the values from the complex plane, Z, to another complex plane, W.
+ Every complex number in the domain of the function will have a corresponding value in the range. However now we would need 4 dimensions to present this as a graph like we do for functions of one variable, so it's easier to visualise as changing from one plane to another.
  For example, consider $w=z^2$, what does this mapping look like?
-  If we assume $w=X(x,y)+iY(x,y)$ we can see that $X=x^2-y^2$ \& $Y=2xy$.
+ If we assume $w=X(x,y)+iY(x,y)$ we can see that $X=x^2-y^2$ \& $Y=2xy$.
 %
 \begin{minipage}[t]{0.47\linewidth}
 	\begin{figure}[H]
@@ -106,8 +108,8 @@ Consider a function $f(z)$, if $f(z_1)=0$ then $z_1$ will map onto the point $w=
 	\includegraphics[width=\linewidth]{complex/argthm}
 	\captionsetup{font=small} 	
 \end{figure}
-\noindent Another statement of the argument theorem is that along the path, $C$, the argument of w changes by $2n\pi$ if n zeroes are enclosed by $C$. 
-If $C$ encloses 1 zero then $C$ wraps around $w=0$ once and therefore the argument of $w$ increases by $2\pi$ around the contour.
+\noindent Another statement of the argument theorem is that along the path, $C$, the argument of w changes by $2n\pi$ if n zeroes are enclosed by $C$.
+ If $C$ encloses 1 zero then $C$ wraps around $w=0$ once and therefore the argument of $w$ increases by $2\pi$ around the contour.
 %
 \begin{examples}
 	\begin{enumerate}
@@ -134,49 +136,50 @@ If $C$ encloses 1 zero then $C$ wraps around $w=0$ once and therefore the argume
 \subsection{Cauchy-Reimann conditions}
 The problem with functions of a complex variable is that they may not be differentiable!
  But how do we know if a function is differentiable? 
- We conclude that the differential of a function must be independent of direction. 
- Now this sounds a bit weird so what does it mean?
-  Lets start with the definition of a derivative, which should be familiar.
+ We can conclude that the differential of a function must be independent of direction.
+ Lets start with the definition of a derivative, which should be familiar.
 %
 \begin{equation*}
 \frac{\diff f}{\diff z}=\lim_{\delta z\to 0}\frac{f(z+\delta z)-f(z)}{\delta z}
 \end{equation*}
 %
-If we say that $\delta z=\delta x + i\delta y$ then the differential should be the same regardless of whether we set $\delta y=0$ and then approach the limit in the x-direction, or if we set $\delta x=0$ and approach the limit from the y-direction.
- If they give us different answers then the limit doesn't exist, if the limit does exist then the function is called analytic.
- 
- Sometimes rather than using X and Y to denote the real and imaginary parts of $f(z)$ we using $u$ and $v$ to avoid confusion.
-  Now we will figure out what criteria a function must satisfy in order to be analytic, we can start with a taylor expansion of $f(z)$ to obtain
+If we say that $\delta z=\delta x + i\delta y$, then the derivative should be the same regardless of whether we set $\delta y=0$ and then approach the limit in the x-direction, or if we set $\delta x=0$ and approach the limit from the y-direction.
+ If they give different answers, then the limit doesn't exist; if the limit does exist then the function is called analytic.
+\par 
+Note that rather than using X and Y to denote the real and imaginary parts of $f(z)$ we often use $u$ and $v$ to avoid confusion.
+ Now we will find the criteria that a function must satisfy in order to be analytic.
+ First we take a Taylor expansion of $f(z)$ to obtain
   %
  \begin{equation}
  \label{totaldcmplxv}
  \delta f=\delta x \left(\frac{\partial u}{\partial x} + i \frac{\partial v}{\partial x}\right) + \delta y \left(\frac{\partial u}{\partial y}+i\frac{\partial v}{\partial y}\right) + O\left({\delta x}^2,{\delta y}^2\right)
  \end{equation}
  %
- which we will use to derive the so called Cauchy-Reimann conditions for an analytic function. If we use the definition of the derivative and set $\delta y=0$ in equation \ref{totaldcmplxv} we can show:
- %
- \begin{equation*}
- \frac{\diff f}{\diff z}=\lim_{\delta x\to 0}\left(\frac{\partial u}{\partial x} + i \frac{\partial v}{\partial x}\right) + O(\delta x).
- \end{equation*}
- %
-Similarly for $\delta x=0$ but remembering we're taking the limit as $i\delta y$ goes to zero we can show:
+ which we will use to derive the \emph{Cauchy-Reimann} conditions for an analytic function.
+ If we use the definition of the derivative and set $\delta y=0$ in equation \ref{totaldcmplxv} we can show:
+%
+\begin{equation*}
+\frac{\diff f}{\diff z}=\lim_{\delta x\to 0}\left(\frac{\partial u}{\partial x} + i \frac{\partial v}{\partial x}\right) + O(\delta x).
+\end{equation*}
+%
+Similarly, for $\delta x=0$, and recalling that we are taking the limit $i\delta y \rightarrow 0$, we can show that
 %
 \begin{equation*}
 \frac{\diff f}{\diff z}=\lim_{\delta y\to 0}\frac{1}{i}\left(\frac{\partial u}{\partial y} + i \frac{\partial v}{\partial y}\right) + O(\delta y).
 \end{equation*}
 %
-Requiring that these 2 expressions are equal to each other, and remembering $1/i=-i$ we can obtain the Cauchy-Reimann conditions
+Requiring that these expressions are equal to each other, and remembering that $1/i=-i$, we obtain the Cauchy-Reimann conditions
 %
 \begin{equation}
-\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}
+\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},
 \end{equation}
 \begin{equation*}
-\frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y} 
+\frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}, 
 \end{equation*}
 %
 which if satisfied, implies $f(z)$ is analytic.
- Technically we would need to prove that satisfying these conditions implies that the limit is the same from all directions and vice versa, but we're not mathematicians so i'll just ask you to accept that if these conditions are satisfied then the function is analytic. 
-[I think it comes from the fact that we proved it for 2 orthogonal directions in a 2 dimensional plane so that covers all directions, but i'm not sure.] It should be noted that l'hopitals rule, the chain rule and the product rule still work for complex variables.
+ Being more rigorous\footnote{I think it comes from the fact that we proved it for 2 orthogonal directions in a 2 dimensional plane so that covers all directions, but I am not sure.}, we would need to prove that satisfying these conditions implies that the limit is the same from all directions and vice versa, but we do not require that level of depth. 
+ It should be noted that L'Hopital's rule, the chain rule, and the product rule still work for complex variables.
 %
 %
 \begin{examples}
