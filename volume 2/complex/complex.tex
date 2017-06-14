@@ -158,6 +158,16 @@ Similarly for $\delta x=0$ but remembering we're taking the limit as $i\delta y$
 \begin{equation*}
 \frac{\diff f}{\diff z}=\lim_{\delta y\to 0}\frac{1}{i}\left(\frac{\partial u}{\partial y} + i \frac{\partial v}{\partial y}\right) + O(\delta y).
 \end{equation*}
-Requiring that these 2 expressions are equal to each other, and remembering $1/i=-i$ we can obtain the Cauchy-Reimann conditions. 
- 
+Requiring that these 2 expressions are equal to each other, and remembering $1/i=-i$ we can obtain the Cauchy-Reimann conditions
+
+\begin{equation}
+\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}
+\end{equation}
+\begin{equation*}
+\frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y} 
+\end{equation*}
+which if satisfied, imply $f(z)$ is analytic. Technically we would need to prove that satisfying these conditions implies that the limit is the same from all directions and vice versa, but we're not mathematicians so i'll just ask you to accept that if these conditions are satisfied then the function is analytic. [I think it comes from the fact that we proved it for 2 orthogonal directions in a 2 dimensional plane so that covers all directions, but i'm not sure.]
+
+
+
  
