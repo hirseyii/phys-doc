@@ -76,11 +76,11 @@
 		\medskip}
 	
 % "dedication" environment
-\newenvironment{dedication}
+\newenvironment{dedication}[1][]
 	{\thispagestyle{empty}		
 		\ttfamily
-		\raggedleft}          	
-	{}        
+		\begin{center}}          	
+	{\end{center}\medskip}        
 
 
 	
@@ -103,8 +103,7 @@
 % Dedication
 \newpage
 \begin{dedication}
-	This book is dedicated to C. Haunch, L. Heseltine \& L. Rich\\
-	for putting up with all of our physics bullshit.
+	This book is dedicated to C. Haunch, L. Heseltine \& L. Rich for putting up with all of our physics bullshit.
 \end{dedication}
 
 % Main contents page
