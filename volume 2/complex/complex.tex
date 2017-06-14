@@ -58,20 +58,21 @@ An argand diagram is a way of representing a complex number on a 2D plane.
 %
 \subsection{Functions and Mappings}
 Here we take a slightly abstract and brief aside to talk about functions. 
-Up until slightly over a century ago a mathematicians view of a function is probably very similar to what the reader has now, usually it's a formula that takes in values of a variable, say $x$, and outputs another number, $f(x)$. However, it became clear that this very restrictive definition of a function would not suffice in the modern world, so we need a more abstract definition of a function.
- The reader may be familiar with this more abstract definition without realising it if they've done any computer programming.
+Up until slightly over a century ago a mathematician's view of a function was probably very similar to what the reader has now. Usually it's a formula that takes in values of a variable, say $x$, and outputs another number, $f(x)$. However, it became clear that this very restrictive definition of a function would not suffice in the modern world, so we needed a more abstract definition of a function.
+ The reader may be familiar with this more abstract definition without realising it, if they've done any computer programming.
   For example in python you may want to make a function that takes in inputs from the user, of say 'yes' or 'no' and outputs a 1 if the user inputs 'yes' or a zero if the user inputs 'no'.
    There are many ways of visualising what a function does, the reader will probably be familiar with a graphical interpretation.
     However, a more abstract function can be viewed in another way, as a mapping. 
     
 We need to define the Domain, D and Co-domain (or Range), R of a function with the former corresponding to all the values that can be input to the function and the latter corresponding to all the outputs of the function.
 The most useful way to think about this is in terms of sets, a function takes vales from a set, D and assigns each value in D a corresponding value in R.
-For example in our programming analogy we take the Domain as {'yes','no'} and the range as {1,0}. 
+For example in our programming analogy we take the Domain as \{'yes','no'\} and the range as \{1,0\}. 
 Anyone making this kind of function will know that they will have to either restrict the users inputs to just yes or no, perhaps by only displaying 2 buttons, or by including an error message and loop if the user inputs something unexpected.
-This is because the domain of this function is {'yes','no'} so this function can only accept the value 'yes' and 'no'.
+This is because the domain of this function is \{'yes','no'\} so this function can only accept the values 'yes' and 'no'.
+
 This more abstract definition of a function can be used to understand functions of a complex variable.
 We can consider the function $f(z)$ as a mapping, taking the values from the complex plane, Z, to another complex plane, W.
- Every complex number in the Domain of the function will have a corresponding value in the range. However now that we would need 4 dimensions to present this as a graph like we do for functions of one variable, so it's easier to visualise as changing from one plane to another.
+ Every complex number in the Domain of the function will have a corresponding value in the range. However now we would need 4 dimensions to present this as a graph like we do for functions of one variable, so it's easier to visualise as changing from one plane to another.
  For example, consider $w=z^2$, what does this mapping look like?
   If we assume $w=X(x,y)+iY(x,y)$ we can see that $X=x^2-y^2$ \& $Y=2xy$.
 %
@@ -146,28 +147,78 @@ If we say that $\delta z=\delta x + i\delta y$ then the differential should be t
  
  Sometimes rather than using X and Y to denote the real and imaginary parts of $f(z)$ we using $u$ and $v$ to avoid confusion.
   Now we will figure out what criteria a function must satisfy in order to be analytic, we can start with a taylor expansion of $f(z)$ to obtain
+  %
  \begin{equation}
  \label{totaldcmplxv}
  \delta f=\delta x \left(\frac{\partial u}{\partial x} + i \frac{\partial v}{\partial x}\right) + \delta y \left(\frac{\partial u}{\partial y}+i\frac{\partial v}{\partial y}\right) + O\left({\delta x}^2,{\delta y}^2\right)
  \end{equation}
+ %
  which we will use to derive the so called Cauchy-Reimann conditions for an analytic function. If we use the definition of the derivative and set $\delta y=0$ in equation \ref{totaldcmplxv} we can show:
+ %
  \begin{equation*}
  \frac{\diff f}{\diff z}=\lim_{\delta x\to 0}\left(\frac{\partial u}{\partial x} + i \frac{\partial v}{\partial x}\right) + O(\delta x).
  \end{equation*}
+ %
 Similarly for $\delta x=0$ but remembering we're taking the limit as $i\delta y$ goes to zero we can show:
+%
 \begin{equation*}
 \frac{\diff f}{\diff z}=\lim_{\delta y\to 0}\frac{1}{i}\left(\frac{\partial u}{\partial y} + i \frac{\partial v}{\partial y}\right) + O(\delta y).
 \end{equation*}
+%
 Requiring that these 2 expressions are equal to each other, and remembering $1/i=-i$ we can obtain the Cauchy-Reimann conditions
-
+%
 \begin{equation}
 \frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}
 \end{equation}
 \begin{equation*}
 \frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y} 
 \end{equation*}
-which if satisfied, imply $f(z)$ is analytic. Technically we would need to prove that satisfying these conditions implies that the limit is the same from all directions and vice versa, but we're not mathematicians so i'll just ask you to accept that if these conditions are satisfied then the function is analytic. [I think it comes from the fact that we proved it for 2 orthogonal directions in a 2 dimensional plane so that covers all directions, but i'm not sure.]
-
-
-
+%
+which if satisfied, implies $f(z)$ is analytic.
+ Technically we would need to prove that satisfying these conditions implies that the limit is the same from all directions and vice versa, but we're not mathematicians so i'll just ask you to accept that if these conditions are satisfied then the function is analytic. 
+[I think it comes from the fact that we proved it for 2 orthogonal directions in a 2 dimensional plane so that covers all directions, but i'm not sure.] It should be noted that l'hopitals rule, the chain rule and the product rule still work for complex variables.
+%
+%
+\begin{examples}
+	Show that, given $f(z)=u+iv$ is analytic:
+	\begin{enumerate}
+		\item $\nabla^2u=\nabla^2v=0$
+		\item $\pmb{\nabla} u \cdot \pmb{\nabla} v=0$
+		\item $f(z)$ must be a function of $z$ and not $\overline{z}$
+		
+		[Hint: write $x=(z+\overline{z})/2$ and $y=(z-\overline{z})/2$ and show $\partial f/\partial \overline{z}=0$ and $\partial f/\partial z=\diff f/\diff z$]
+	\end{enumerate}
+\end{examples}
+\subsubsection{solutions}
+\begin{enumerate}
+	\item This one is relatively simple, just write:
+	\begin{equation*}
+	\nabla^2u=\frac{\partial}{\partial x}\left(\frac{\partial u}{\partial x}\right)+\frac{\partial}{\partial y}\left(\frac{\partial u}{\partial y}\right)
+	\end{equation*}
+	and sub in the Cauchy-Reimann conditions to get
+	\begin{equation*}
+	\nabla^2u=\frac{\partial^2v}{\partial y \partial x}-\frac{\partial^2v}{\partial x \partial y}
+	\end{equation*}
+	%
+	which equals zero by the commutative property of differentials. The same approach can be taken for $v$. functions that satisfy this equation, 'Laplace's equation' are called harmonic functions, this property of analytic functions will be useful later.
+	%
+	%
+	\item Showing this will also be important for the next section. First write out the vectors
+	\begin{equation*}
+	\pmb{\nabla}u=\left(\frac{\partial u}{\partial x},\frac{\partial u}{\partial y}\right)~~\&~~\pmb{\nabla}v=\left(\frac{\partial v}{\partial x},\frac{\partial v}{\partial y}\right),
+	\end{equation*}
+	then using the Cauchy-Reimann conditions that indentity is easy to show.	
+	 In the example mapping above and the problem you may have notices that your lines of constant x and lines of constant y appear to cross at right angles, this proves that is true for any region in which the function is analytic.
+	%
+	%
+	\item This needs the Cauchy-Reimann conditions again
+	$$\frac{\partial f}{\partial \overline{z}}=\left(\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}\right)\frac{\partial x}{\partial \overline{z}}+\left(\frac{\partial u}{\partial y}+i\frac{\partial v}{\partial y}\right)\frac{\partial y}{\partial \overline{z}}     $$
+	Then using $\partial x/\partial \overline{z}=1/2$ and $\partial y/\partial \overline{z}=i/2$ and the Cauchy Reimann conditions we can show $\partial f/\partial \overline{z}=0$. For the second part, use the same procedure to show
+	\begin{equation*}
+	\frac{\partial f}{\partial z}=\left(\frac{\partial u}{\partial x} + i \frac{\partial v}{\partial x}\right)=\frac{1}{i}\left(\frac{\partial u}{\partial y} + i \frac{\partial v}{\partial y}\right)=\frac{\diff f}{\diff z}.
+	\end{equation*}
+\end{enumerate}
+%
+%
+\section{Conformal Mappings}
  
