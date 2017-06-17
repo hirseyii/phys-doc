@@ -166,27 +166,48 @@ hence
 The \emph{opacity coefficient} $\kappa_\nu$ is defined such that $\sigma_\nu \propto \kappa_\nu$. Also, $\kappa_\nu$ has units m$^2$/kg.
 \par 
 \subsubsection{Optical depth}
-Another useful quantity to define is optical depth $\tau_\nu$, which is a re-scaled distance co-ordinate defined by
+A useful quantity to define is optical depth $\tau_\nu$, which is a re-scaled distance co-ordinate defined by
 $$ \diff \tau_\nu \equiv \alpha_\nu \diff s, $$
-which provides a more relevan unit to express distance in, rather than metres.
+which provides a more relevant unit to express distance in, rather than metres.
  The total optical depth can then be defined as
 $$ \tau_\nu (s) = \int_{s_0}^{s} \alpha_\nu \diff s^\prime. $$
 The optical depth becomes particularly useful in the case $j_\nu = 0$.
+ In this situation, the equation of radiative transfer (see equation \ref{eq:radiative_transfer}) becomes
+$$ \diff I_\nu = - I_\nu \diff \tau_\nu. $$
 This differential equation is easy to solve and we find that
 %
 \begin{equation}
 I_\nu (\tau_\nu) = I_{\nu,0} e^{\tau_\nu}.
 \end{equation}
 %
- In this situation, the equation of radiative transfer (see equation \ref{eq:radiative_transfer}) becomes
-$$ \diff I_\nu = - I_\nu \diff \tau_\nu. $$
+\par 
+\subsubsection{Source function}
+Another useful quantity to define is the source function which follows a similar derivation. %REF Draine 7.4
+This, along with the definition for optical depth can be used to further generalise the equation of radiative transfer (\ref{eq:radiative_transfer}).
+ The source function, $S_\nu$ is defined as
+%
+\begin{equation}
+	S_\nu \equiv \frac{j_\nu}{\alpha_\nu}.
+\end{equation}
+%
+The radiative transfer equation can now be defined using both $S_\nu$ and $\tau_\nu$ as
+%
+\begin{align*}
+	\diff I_\nu &= \frac{j_\nu}{\alpha_\nu} \diff \tau_\nu - I_\nu \diff \tau_\nu
+	\linedrop
+	\diff I_\nu &= S_\nu \diff \tau_\nu - I_\nu \diff \tau_\nu.
+\end{align*}
+%
+We can then integrate this to obtain the solution by introducing an integration factor $e^{\tau_\nu}$.
+%
+\begin{align*}
+	\frac{\diff I_\nu}{\diff \tau_\nu} + I_\nu &= S_\nu
+	\linedrop
+	e^{\tau_\nu} \left( \frac{\diff I_\nu}{\diff \tau_\nu} + I_\nu \right) &= e^{\tau_\nu} S_\nu
+	\linedrop
+	\text{product rule} \implies 
+	\frac{\diff}{\diff \tau_\nu} \left( e^{\tau_\nu} I_\nu \right) &= e^{\tau_\nu} S_\nu
+	\linedrop
+	\diff \left( e^{\tau_\nu} I_\nu \right) &= e^{\tau_\nu} S_\nu \diff \tau_\nu
+\end{align*}
 
-
-
-
-
-
-
- 
- 
- 
