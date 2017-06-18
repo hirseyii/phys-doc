@@ -209,5 +209,73 @@ We can then integrate this to obtain the solution by introducing an integration 
 	\frac{\diff}{\diff \tau_\nu} \left( e^{\tau_\nu} I_\nu \right) &= e^{\tau_\nu} S_\nu
 	\linedrop
 	\diff \left( e^{\tau_\nu} I_\nu \right) &= e^{\tau_\nu} S_\nu \diff \tau_\nu
+	\linedrop
+	\int_{I_\nu (0)}^{e^{\tau_\nu} I_\nu} \diff (e^{\tau_\nu} I_\nu) &= \int_{0}^{\tau_\nu} e^{\tau^{\prime}_\nu} S_\nu \diff \tau^\prime_\nu
 \end{align*}
+%
+Performing this integration, and then dividing by the introduced factor of $e^{\tau_\nu}$ gives the general solution to the equation of radiative transfer, shown in equation \ref{eq:radiative_transfer_gen}
+%
+\begin{equation}
+	I_\nu (\tau_\nu) = I_\nu (0) e^{-\tau_\nu} + \int_{0}^{\tau_\nu} e^{-(\tau_\nu - \tau^\prime_\nu)} S_\nu \diff \tau^\prime_\nu.
+	\label{eq:radiative_transfer_gen}
+\end{equation}
+%
+As we have seen previously, radiation from a background source is attenuated with an exponential factor given by the optical depth.
+ The second term in equation \ref{eq:radiative_transfer_gen} is the intensity generated in the medium due to emission.
+ It is apparent that any emission produced is also attenuated by the medium between the point of generation of the emission and the observer.
+ For constant $S_\nu$, we find that
+%
+\begin{equation}
+	I_\nu (\tau_\nu) = I_\nu (0) e^{-\tau_\nu} + S_\nu (1 - e^{-\tau_\nu}).
+\end{equation}
+%
+The limit $\tau_\nu \gg 1$ is the \emph{optically thick} limit, and $\tau_\nu \ll 1$ is the \emph{optically thin} limit.
+%
+%
+%
+\section{Black body radiation}
+Radiation is referred to as `thermal' if the spectrum depends \emph{only} on the temperature of the emitting body.
+ The spectrum of `non-thermal' radiation however, is affected by other parameters such as chemical composition, or magnetic field strength.
+ A perfect absorber in local thermal equilibrium would radiate black body radiation.
+ A commonly cited example would be photons escaping through a small hole in a box containing a ``photon gas'' in equilibrium with the box.
+ For isotropic radiation, the spectrum is given by the \emph{Planck function} shown in equation \ref{eq:planck_func}
+%
+\begin{equation}
+	I_\nu \equiv B_\nu = \frac{2 h \nu ^3}{c^2} \frac{1}{\exp(\frac{h \nu}{k_B T}) - 1}.
+	\label{eq:planck_func}
+\end{equation}
+%
+The Planck curve is monotonic meaning that for a higher $T$, all points on the curve are higher; the curves do not cross.
+%
+\subsubsection{Changing variables}
+We can express the Planck function in terms of wavelength rather than frequency.
+ In order to do this we must follow this procedure:
+ consider a frequency interval $(\nu + \diff \nu)$ and it's corresponding wavelength interval $(\lambda + \diff \lambda)$.
+ We require that the intensity should be the same when considering these intervals, i.e.\ $B_\nu \diff \nu \equiv B_\lambda \diff \lambda$ hence,
+%
+\begin{align}
+	B_\lambda &= B_\nu \left| \frac{\diff\nu}{\diff\lambda} \right|				\nonumber
+	\linedrop
+	B_\lambda &= B_\nu \left| \frac{\diff (c/\lambda)}{\diff\lambda}\right|		\nonumber
+	\linedrop
+	B_\lambda &= B_\nu \frac{c}{\lambda^2}										\nonumber
+	\linedrop
+	B_\lambda &= \frac{c}{\lambda^2} \frac{2 h (c/\lambda)^3}{c^2} \frac{1}{\exp(\frac{h c}{k_B T \lambda}) - 1} \nonumber
+	\linedrop
+	B_\lambda &= \frac{2 h c^2}{\lambda^5} \frac{1}{\exp(\frac{h c}{k_B T \lambda}) - 1}
+\end{align}
+%
+Note that we use the absolute value of the derivative since both $\diff\lambda$ and $\diff\nu$ were defined to be positive whereas the derivative is negative.
+
+
+
+
+
+
+
+
+
+
+
+
 
