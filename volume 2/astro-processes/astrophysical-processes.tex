@@ -245,7 +245,7 @@ Radiation is referred to as `thermal' if the spectrum depends \emph{only} on the
 	\label{eq:planck_func}
 \end{equation}
 %
-The Planck curve is monotonic meaning that for a higher $T$, all points on the curve are higher; the curves do not cross.
+The Planck curve is monotonic meaning that for a larger $T$, all points on the curve are higher; the curves do not cross.
 %
 \subsubsection{Changing variables}
 We can express the Planck function in terms of wavelength rather than frequency.
@@ -265,9 +265,25 @@ We can express the Planck function in terms of wavelength rather than frequency.
 	B_\lambda &= \frac{2 h c^2}{\lambda^5} \frac{1}{\exp(\frac{h c}{k_B T \lambda}) - 1}
 \end{align}
 %
-Note that we use the absolute value of the derivative since both $\diff\lambda$ and $\diff\nu$ were defined to be positive whereas the derivative is negative.
-
-
+Note that we use the absolute value of the derivative since both $\diff\lambda$ and $\diff\nu$ were defined to be positive whereas the derivative is negative.            
+%
+\subsubsection{High and low frequency limits}
+The long and short wavelength limits were determined empirically before the theoretical derivation of the Planck function.
+\par 
+The high frequency (short wavelength) limit where $h\nu \gg k_B T$ is known as the \emph{Wien} limit.
+ The exponential term is much larger than one, hence
+%
+\begin{equation}
+	B_\nu \simeq \frac{2 h \nu^3}{c^2} \exp\left(\frac{-h\nu}{k_BT}\right).
+	\label{eq:wien_limit}
+\end{equation}
+%
+The low frequency (long wavelength) limit where $h\nu \ll k_B T$ is known as the \emph{Rayleigh-Jeans} limit.
+ In this limit, the exponential term is expanded as $\exp \left( h\nu/k_BT \right) = 1 + h\nu/k_BT + ...$ Hence,
+%
+\begin{equation}
+	B_\nu \simeq 
+\end{equation}
 
 
 
