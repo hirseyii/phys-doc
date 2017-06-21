@@ -1,0 +1,120 @@
+%%%%%%%%%% BEGIN PREAMBLE %%%%%%%%%%
+\documentclass[11pt,oneside]{book}
+%%%%% PACKAGES %%%%%
+\usepackage[top=2.54cm, bottom=2.54cm, left=3cm, right=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[font={scriptsize}]{caption}
+\usepackage{float} 
+\usepackage{changepage}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{minitoc}
+\usepackage{empheq}
+
+% minitoc parameters
+
+\setlength{\mtcindent}{24pt}
+\renewcommand{\mtcoffset}{0pt}
+\mtcsetoffset{minitoc}{0pt}
+\setlength{\mtcskipamount}{\bigskipamount}
+
+\setcounter{minitocdepth}{2}  
+\renewcommand{\mtcfont}{\small\rmfamily\upshape\mdseries} 
+\renewcommand{\mtcSfont}{\small\rmfamily\upshape\bfseries}
+% Suppress (sub)section printing in main ToC
+\setcounter{tocdepth}{0}
+
+% Change title offset
+\titleformat{\chapter}[display]
+	{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{-.5in}{.5pt}{40pt}
+
+%%%%%%%%%% TITLE PAGE %%%%%%%%%
+% Create the command for including the title page in the document
+\newcommand*{\titleGM}{\begingroup 
+	\hbox{ % Horizontal box
+		\hspace*{0.2\textwidth} % Whitespace to the left of the title page
+		\rule{1pt}{\textheight} % Vertical line
+		\hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
+		\parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
+			
+			{\noindent\Huge\bfseries University of Manchester \\[0.5\baselineskip] Undergraduate \\[0.5\baselineskip]Physics Notes}\\[2\baselineskip] % Title
+			{\large \textit{Volume 2}}\\[4\baselineskip] % Tagline or further description
+			{\Large \textsc{E. Broadberry, H. Lee Hughes, N. K. Sen}} % Author name
+			
+			\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+	}}
+	\endgroup}
+
+%%%%% CUSTOM ENVIRONMENTS %%%%%
+% "Examples" environment
+\newenvironment{examples}[1][] %DON'T DELETE THESE BRACKETS IT WILL BREAK SHIT
+	{\refstepcounter{subsection}
+		\par
+		\noindent\rule[0.2ex]{\linewidth}{0.1cm}
+		\begin{adjustwidth}{1cm}{1cm}
+		\medskip
+		\noindent \textbf{Examples~\thesubsection #1} \rmfamily}
+	{\par
+		\end{adjustwidth}
+		\noindent\rule[0.2ex]{\linewidth}{0.1cm}
+		\medskip}
+
+% "cust_figure" environment
+\newenvironment{custfigure}[1][] %DON'T DELETE THESE BRACKETS IT WILL BREAK SHIT
+	{\par #1
+		\noindent\rule[0.2ex]{\linewidth}{1pt}
+		\begin{figure}[H]
+		\centering
+		\captionsetup{font=small}
+		}
+	{\end{figure}
+		\noindent\rule[0.2ex]{\linewidth}{1pt}
+		\medskip}
+	
+% "dedication" environment
+\newenvironment{dedication}[1][]
+	{\thispagestyle{empty}		
+		\ttfamily
+		\begin{center}}          	
+	{\end{center}\medskip}        
+
+
+	
+%%%%%%%%%% CUSTOM MACROS %%%%%%%%%%
+% Align environment linedrop
+\newcommand*{\linedrop}{\\[0.5\baselineskip]}
+% Dot product 
+\newcommand*{\dotp}{\boldsymbol{\cdot}}
+% derivative "d"
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+%%%%% END PREABMLE %%%%%%
+
+\begin{document}
+\frontmatter
+\thispagestyle{empty} % Removes page numbers
+\titleGM % This command includes the title page
+
+% Dedication
+\newpage
+\begin{dedication}
+	This book is dedicated to C. Haunch, L. Heseltine \& L. Rich for putting up with all of our physics bullshit.
+\end{dedication}
+
+% Main contents page
+\dominitoc
+\tableofcontents
+
+
+\mainmatter
+\pagestyle{plain}
+% Astrophysical Processes chapter
+\include{astro-processes/astrophysical-processes}
+\include{complex/complex}
+
+\end{document}
