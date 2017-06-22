@@ -227,6 +227,7 @@ As we have seen previously, radiation from a background source is attenuated wit
 %
 \begin{equation}
 	I_\nu (\tau_\nu) = I_\nu (0) e^{-\tau_\nu} + S_\nu (1 - e^{-\tau_\nu}).
+	\label{eq:radiative_const_S}
 \end{equation}
 %
 The limit $\tau_\nu \gg 1$ is the \emph{optically thick} limit, and $\tau_\nu \ll 1$ is the \emph{optically thin} limit.
@@ -278,16 +279,46 @@ The high frequency (short wavelength) limit where $h\nu \gg k_B T$ is known as t
 	\label{eq:wien_limit}
 \end{equation}
 %
+\par 
 The low frequency (long wavelength) limit where $h\nu \ll k_B T$ is known as the \emph{Rayleigh-Jeans} limit.
  In this limit, the exponential term is expanded as $\exp \left( h\nu/k_BT \right) = 1 + h\nu/k_BT + ...$ Hence,
 %
 \begin{equation}
-	B_\nu \simeq 
+	B_\nu \simeq \frac{2 \nu^2 k_B}{c^2} T.
+	\label{eq:rayleigh_jeans_limit}
 \end{equation}
-
-
-
-
+%
+In this limit, intensity is proportional to temperature.
+ As a result, in radio astronomy it is common to express intensities as `brightness temperatures'.
+%
+%
+\subsection{Kirchhoff's law}
+Consider an optically thick cloud with a uniform temperature which emits thermal radiation.
+ The radiative transfer equation (eq. \ref{eq:radiative_const_S}) can be written as
+%
+\[ \diff I_\nu = S_\nu \diff \tau_\nu - B_\nu \diff \tau_\nu = 0, \]
+%
+since \( I_\nu = B_\nu \) everywhere inside the cloud.
+ This implies that
+%
+\begin{equation}
+	B_\nu = S_\nu \equiv \frac{j_\nu}{\alpha_\nu},
+	\label{eq:kirchhoff's_law}
+\end{equation}
+%
+which is known as \emph{Kirchhoff's law}: the source function of thermal radiation is the Planck function.
+ Note that in general, the observed intensity is a combination of the background and source function.
+%
+%
+\subsection{Temperature measurements}
+\subsubsection{Brightness temperature}
+We define a brightness temperature \(T_b\) for an intensity measurement at a certain frequency such that
+%
+\begin{equation}
+	I_\nu = B_\nu (T_b).
+	\label{eq:brightness_temp}
+\end{equation}
+%
 
 
 
