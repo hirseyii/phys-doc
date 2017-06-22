@@ -72,7 +72,10 @@ Consider an object which a circular region in the sky with radius $\theta_c$.
 %
 For small $\theta_c$, $\sin(\theta_c) \simeq \tan(\theta_c) = R/r$ where $R$ is the object radius and $r$ is the object-aperture distance, hence
 %
-$$ F_\nu = \pi I_\nu  \left( \frac{R}{r} \right) ^2 \propto \frac{1}{r^2}. $$
+\begin{equation}
+	F_\nu = \pi I_\nu  \left( \frac{R}{r} \right) ^2 \propto \frac{1}{r^2}.
+	\label{eq:AP:flux_intensity_relation}
+\end{equation}
 %
 For an isotropically emitting object (such as a star) the flux can be related to the luminosity (total power generated) by
 %
@@ -327,11 +330,20 @@ The bolometric flux at the surface of a black body is given by
 %
 \begin{equation}
 	F_\text{surf} = \sigma_{SB} T^4,
+	\label{eq:AP:stefan_boltzmann_law}
 \end{equation}
 %
-where \( \sigma_{SB} \) is the Stefan-Boltzmann constant ( \( 5.67 \times 10^{-8} \) J/s/m\( ^2 \)/K\( ^4 \) )
-
-
+where \( \sigma_{SB} \) is the Stefan-Boltzmann constant ( \( 5.67 \times 10^{-8} \) J/s/m\( ^2 \)/K\( ^4 \) ).
+ This shows that a unit area of black body surface with uniform temperature radiates a power \( \sigma_{SB} T^4 \).
+ Hence, a measured intensity (assuming the intensity is unaffected by the medium along the line of sight) is related to temperature by
+%
+\begin{equation}
+	\pi I = \sigma_{SB} T_\text{eff}^4,
+	\label{eq:AP:effective_temperature}
+\end{equation}
+%
+where \( T_\text{eff} \) is the \textit{effective temperature} remembering that it is the temperature of a black body emitting the same observed flux.
+ Note that the size of the object should be known before determining the effective temperature, in order to relate the measured flux to the intensity (see eq. \ref{eq:AP:flux_intensity_relation}).
 
 
 
