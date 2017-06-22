@@ -13,7 +13,7 @@ Note that flux is dependant on the orientation of the unit surface with respect 
 %
 \begin{equation}
 	\diff E = F_\nu \diff A \diff t \diff \nu
-	\label{eq:def_flux}
+	\label{eq:AP:def_flux}
 \end{equation}
 %
 This gives the energy flux per unit of bandwidth, (frequency interval of radiation) which has units J/s/m$^2$/Hz.
@@ -23,7 +23,7 @@ In order to account for the differing directions of photons, the flux is further
 %
 \begin{equation}
 	\diff E = I_\nu \diff A dt \diff \nu \diff \Omega.
-	\label{eq:def_intensity}
+	\label{eq:AP:def_intensity}
 \end{equation}
 %
 This then has units J/s/m$^2$/Hz/sr.
@@ -53,7 +53,7 @@ hence when integrated over a complete sphere, $\Omega = 4\pi$~sr.
 	\frac{A}{4\pi R^2} &= \frac{\Omega}{4\pi}
 	\linedrop
 	\Omega &= \frac{A}{R^2}.
-	\label{eq:solid_angle}
+	\label{eq:AP:solid_angle}
 \end{align}
 %
 As asserted previously, the solid angle corresponds to the area on a sphere with unit radius.
@@ -93,7 +93,7 @@ We want to know how intensity, $I_\nu$ changes along the path of the ray.
 	I_{\nu ,1}\diff A_1 \diff t \diff \nu_1 \diff \Omega_1 &= I_{\nu ,2}\diff A_2 \diff t \diff \nu_2 \diff \Omega_2 ,	
 \end{align*}
 %
-Since, in free space, the frequency remains constant and using equation \ref{eq:solid_angle}:
+Since, in free space, the frequency remains constant and using equation \ref{eq:AP:solid_angle}:
 %
 \begin{align*}
 		I_{\nu ,1}\diff A_1 \frac{\diff A_2}{R^2} &= I_{\nu ,2}\diff A_1 \frac{\diff A_1}{R^2}
@@ -117,7 +117,7 @@ We now need  to consider emission generated along the line of sight as well as a
 %
 \begin{equation}
 	\frac{\diff I_\nu}{\diff s} = j_\nu - \alpha_\nu I_\nu,
-	\label{eq:radiative_transfer}
+	\label{eq:AP:radiative_transfer}
 \end{equation}
 %
 where $j_\nu$ is the \emph{monochromatic emission coefficient} with units J/s/m$^3$/Hz/sr, and $\alpha_\nu$ is the \emph{monochromatic absorption constant} with units m$^{-1}$.
@@ -125,7 +125,7 @@ where $j_\nu$ is the \emph{monochromatic emission coefficient} with units J/s/m$
  Note that in free space, $j_\nu = 0$ and $\alpha_\nu = 0$.
 \par
 \subsubsection{Emission coefficient}
-From the definition of intensity given by equation \ref{eq:def_intensity}, but changing $\diff E$ to $\delta_E$,
+From the definition of intensity given by equation \ref{eq:AP:def_intensity}, but changing $\diff E$ to $\delta_E$,
 %
 \begin{align}
 	\frac{\diff \delta_E}{\diff s} &= \frac{\diff I_\nu}{\diff s} \diff A \diff t \diff \nu \diff \Omega
@@ -133,10 +133,10 @@ From the definition of intensity given by equation \ref{eq:def_intensity}, but c
 	\frac{\diff \delta_E}{\diff s} &= j_\nu \diff A \diff t \diff \nu \diff \Omega
 	\linedrop
 	\therefore \diff \delta_E &= j_\nu \diff V \diff t \diff \nu \diff \Omega.
-	\label{eq:emission_coef}
+	\label{eq:AP:emission_coef}
 \end{align}
 %
-From equation \ref{eq:emission_coef} we can see that $j_\nu$ corresponds to the amount of energy radiated per unit volume\footnote{Note that $\diff V = \diff A \diff s$.}, per unit time, per unit solid angle for a frequency interval.
+From equation \ref{eq:AP:emission_coef} we can see that $j_\nu$ corresponds to the amount of energy radiated per unit volume\footnote{Note that $\diff V = \diff A \diff s$.}, per unit time, per unit solid angle for a frequency interval.
 \par 
 \subsubsection{Absorption constant}
 By using similar treatment for the absorption, we find that
@@ -145,13 +145,13 @@ By using similar treatment for the absorption, we find that
 		\frac{\diff \delta_E}{\diff s} &= -\alpha_\nu I_\nu  \diff A \diff t \diff \nu \diff \Omega
 		\linedrop
 		\frac{\diff \delta_E}{\diff s} &= -\alpha_\nu \delta_E.
-		\label{eq:absorption_const}
+		\label{eq:AP:absorption_const}
 \end{align}
 %
-Equation \ref{eq:absorption_const} implies that $\alpha_\nu \diff s$ represents the fraction of energy that disappears from the radiation field after travelling a length $\diff s$ through the medium.
+Equation \ref{eq:AP:absorption_const} implies that $\alpha_\nu \diff s$ represents the fraction of energy that disappears from the radiation field after travelling a length $\diff s$ through the medium.
 \par  
 \subsubsection{Opacity}
-Following from the definition in equation \ref{eq:absorption_const}, we now consider a volume of absorbing particles with number density $n$ and absorption cross section $\sigma_\nu$.
+Following from the definition in equation \ref{eq:AP:absorption_const}, we now consider a volume of absorbing particles with number density $n$ and absorption cross section $\sigma_\nu$.
  Since each particle obscures an area $\sigma_\nu$, the total area blocked is $n\sigma_\nu\diff V$.
  Also, the fractional area (through which photons flow) that is blocked by absorbers is
 $$ n \sigma_\nu \frac{\diff V}{\diff A} = n \diff s \sigma_\nu, $$
@@ -172,7 +172,7 @@ which provides a more relevant unit to express distance in, rather than metres.
  The total optical depth can then be defined as
 $$ \tau_\nu (s) = \int_{s_0}^{s} \alpha_\nu \diff s^\prime. $$
 The optical depth becomes particularly useful in the case $j_\nu = 0$.
- In this situation, the equation of radiative transfer (see equation \ref{eq:radiative_transfer}) becomes
+ In this situation, the equation of radiative transfer (see equation \ref{eq:AP:radiative_transfer}) becomes
 $$ \diff I_\nu = - I_\nu \diff \tau_\nu. $$
 This differential equation is easy to solve and we find that
 %
@@ -183,7 +183,7 @@ I_\nu (\tau_\nu) = I_{\nu,0} e^{\tau_\nu}.
 \par 
 \subsubsection{Source function}
 Another useful quantity to define is the source function which follows a similar derivation. %REF Draine 7.4
-This, along with the definition for optical depth can be used to further generalise the equation of radiative transfer (\ref{eq:radiative_transfer}).
+This, along with the definition for optical depth can be used to further generalise the equation of radiative transfer (\ref{eq:AP:radiative_transfer}).
  The source function, $S_\nu$ is defined as
 %
 \begin{equation}
@@ -213,21 +213,21 @@ We can then integrate this to obtain the solution by introducing an integration 
 	\int_{I_\nu (0)}^{e^{\tau_\nu} I_\nu} \diff (e^{\tau_\nu} I_\nu) &= \int_{0}^{\tau_\nu} e^{\tau^{\prime}_\nu} S_\nu \diff \tau^\prime_\nu
 \end{align*}
 %
-Performing this integration, and then dividing by the introduced factor of $e^{\tau_\nu}$ gives the general solution to the equation of radiative transfer, shown in equation \ref{eq:radiative_transfer_gen}
+Performing this integration, and then dividing by the introduced factor of $e^{\tau_\nu}$ gives the general solution to the equation of radiative transfer, shown in equation \ref{eq:AP:radiative_transfer_gen}
 %
 \begin{equation}
 	I_\nu (\tau_\nu) = I_\nu (0) e^{-\tau_\nu} + \int_{0}^{\tau_\nu} e^{-(\tau_\nu - \tau^\prime_\nu)} S_\nu \diff \tau^\prime_\nu.
-	\label{eq:radiative_transfer_gen}
+	\label{eq:AP:radiative_transfer_gen}
 \end{equation}
 %
 As we have seen previously, radiation from a background source is attenuated with an exponential factor given by the optical depth.
- The second term in equation \ref{eq:radiative_transfer_gen} is the intensity generated in the medium due to emission.
+ The second term in equation \ref{eq:AP:radiative_transfer_gen} is the intensity generated in the medium due to emission.
  It is apparent that any emission produced is also attenuated by the medium between the point of generation of the emission and the observer.
  For constant $S_\nu$, we find that
 %
 \begin{equation}
 	I_\nu (\tau_\nu) = I_\nu (0) e^{-\tau_\nu} + S_\nu (1 - e^{-\tau_\nu}).
-	\label{eq:radiative_const_S}
+	\label{eq:AP:radiative_const_S}
 \end{equation}
 %
 The limit $\tau_\nu \gg 1$ is the \emph{optically thick} limit, and $\tau_\nu \ll 1$ is the \emph{optically thin} limit.
@@ -239,11 +239,11 @@ Radiation is referred to as `thermal' if the spectrum depends \emph{only} on the
  The spectrum of `non-thermal' radiation however, is affected by other parameters such as chemical composition, or magnetic field strength.
  A perfect absorber in local thermal equilibrium would radiate black body radiation.
  A commonly cited example would be photons escaping through a small hole in a box containing a ``photon gas'' in equilibrium with the box.
- For isotropic radiation, the spectrum is given by the \emph{Planck function} shown in equation \ref{eq:planck_func}
+ For isotropic radiation, the spectrum is given by the \emph{Planck function} shown in equation \ref{eq:AP:planck_func}
 %
 \begin{equation}
 	I_\nu \equiv B_\nu = \frac{2 h \nu ^3}{c^2} \frac{1}{\exp(\frac{h \nu}{k_B T}) - 1}.
-	\label{eq:planck_func}
+	\label{eq:AP:planck_func}
 \end{equation}
 %
 The Planck curve is monotonic meaning that for a larger $T$, all points on the curve are higher; the curves do not cross.
@@ -276,7 +276,7 @@ The high frequency (short wavelength) limit where $h\nu \gg k_B T$ is known as t
 %
 \begin{equation}
 	B_\nu \simeq \frac{2 h \nu^3}{c^2} \exp\left(\frac{-h\nu}{k_BT}\right).
-	\label{eq:wien_limit}
+	\label{eq:AP:wien_limit}
 \end{equation}
 %
 \par 
@@ -285,7 +285,7 @@ The low frequency (long wavelength) limit where $h\nu \ll k_B T$ is known as the
 %
 \begin{equation}
 	B_\nu \simeq \frac{2 \nu^2 k_B}{c^2} T.
-	\label{eq:rayleigh_jeans_limit}
+	\label{eq:AP:rayleigh_jeans_limit}
 \end{equation}
 %
 In this limit, intensity is proportional to temperature.
@@ -294,7 +294,7 @@ In this limit, intensity is proportional to temperature.
 %
 \subsection{Kirchhoff's law}
 Consider an optically thick cloud with a uniform temperature which emits thermal radiation.
- The radiative transfer equation (eq. \ref{eq:radiative_const_S}) can be written as
+ The radiative transfer equation (eq. \ref{eq:AP:radiative_const_S}) can be written as
 %
 \[ \diff I_\nu = S_\nu \diff \tau_\nu - B_\nu \diff \tau_\nu = 0, \]
 %
@@ -303,7 +303,7 @@ since \( I_\nu = B_\nu \) everywhere inside the cloud.
 %
 \begin{equation}
 	B_\nu = S_\nu \equiv \frac{j_\nu}{\alpha_\nu},
-	\label{eq:kirchhoff's_law}
+	\label{eq:AP:kirchhoff's_law}
 \end{equation}
 %
 which is known as \emph{Kirchhoff's law}: the source function of thermal radiation is the Planck function.
@@ -316,9 +316,20 @@ We define a brightness temperature \(T_b\) for an intensity measurement at a cer
 %
 \begin{equation}
 	I_\nu = B_\nu (T_b).
-	\label{eq:brightness_temp}
+	\label{eq:AP:brightness_temp}
 \end{equation}
 %
+This gives a temperature which corresponds to the Planck function which reproduces the flux observed in a particular frequency band.
+ Only in the case that the source is producing black body radiation does the temperature of the source equal \(T_b\).
+%
+\subsubsection{Stefan Boltzmann law}
+The bolometric flux at the surface of a black body is given by
+%
+\begin{equation}
+	F_\text{surf} = \sigma_{SB} T^4,
+\end{equation}
+%
+where \( \sigma_{SB} \) is the Stefan-Boltzmann constant ( \( 5.67 \times 10^{-8} \) J/s/m\( ^2 \)/K\( ^4 \) )
 
 
 
