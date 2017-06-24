@@ -13,6 +13,15 @@
 \usepackage{caption}
 \usepackage{minitoc}
 \usepackage{empheq}
+\usepackage{hyperref}
+\usepackage{physics}
+\usepackage{xparse}
+
+% hyperref parameters
+\hypersetup{%
+	colorlinks=false,% hyperlinks will be black
+	pdfborderstyle={/S/U/W .8}% border style will be underline of width 1pt
+}
 
 % minitoc parameters
 
@@ -116,6 +125,5 @@
 % Astrophysical Processes chapter
 \include{astro-processes/astrophysical-processes}
 \include{complex/complex}
-\include{Photonics/Intro-photonics}
-
+\include{photonics/intro-photonics}
 \end{document}
