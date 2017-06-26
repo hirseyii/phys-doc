@@ -71,7 +71,10 @@ Consider an object which a circular region in the sky with radius \(\theta_c\).
 %
 For small \(\theta_c\), \(\sin(\theta_c) \simeq \tan(\theta_c) = R/r\) where \(R\) is the object radius and \(r\) is the object-aperture distance, hence
 %
-\[F_\nu = \pi I_\nu  \left( \frac{R}{r} \right) ^2 \propto \frac{1}{r^2}.\]
+\begin{equation}
+	F_\nu = \pi I_\nu  \left( \frac{R}{r} \right) ^2 \propto \frac{1}{r^2}.
+	\label{eq:AP:flux}
+\end{equation}
 %
 For an isotropically emitting object (such as a star) the flux can be related to the luminosity (total power generated) by
 %
@@ -289,8 +292,86 @@ The low frequency (long wavelength) limit where \(h\nu \ll k_B T\) is known as t
  In this limit, the exponential term is expanded as \(\exp( h\nu/k_BT) = 1 + h\nu/k_BT + ...\) Hence,
 %
 \begin{equation}
-	B_\nu \simeq 
+	B_\nu \simeq \frac{2 \nu ^2 k_B}{c^2} T.
+	\label{eq:AP:rayleigh_jeans_limit}
 \end{equation}
+%
+This motivates the common practice in radio astronomy to refer to intensities as `brightness temperatures'.
+%
+%
+\subsection{Kirchhoff's law}
+We can relate the Planck function to the source function (\(S_\nu\)).
+ Consider an optically thick cloud in thermal equilibrium emitting thermal radiation.
+ The radiative transfer equation (\ref{eq:AP:radiative_transfer}) can be written as
+%
+\[ \dd{I_\nu} = S_\nu \dd{\tau_\nu} - B_\nu \dd{\tau_\nu} = 0. \]
+%
+Since \( I_\nu = B_\nu \) inside the cloud, this implies that
+%
+\begin{equation}
+	S_\nu \equiv \frac{j_\nu}{\alpha_\nu} = B_\nu.
+	\label{eq:AP:kirchhoff's_law}
+\end{equation}
+%
+This is known as \emph{Kirchhoff's law}: the source function of thermal radiation is equal to the Planck fundtion.
+ Note that in general, the observed intensity is a combination of the source function as well as the background contribution.
+%
+%
+\subsection{Temperature measurements}
+\subsubsection{Brightness temperature}
+If we take an intensity measurement at a particular frequency, we can define \emph{brightness temperature}, \(T_b\) such that
+%
+\begin{equation}
+	I_\nu = B_\nu (T_b).
+	\label{eq:AP:brightness_temperature}
+\end{equation}
+%
+The brightness temperature corresponds to the temperature at which the Planck function would reproduce the observed flux.
+ Only if the radiation is black body does \(T_b\) equal the actual temperature of the source.
+%
+\subsubsection{Stefan Boltzmann law}
+The bolometric flux at the surface of a black body is given by the Stefan Boltzmann law,
+%
+\begin{equation}
+	F_\text{surf} = \sigma_{SB} T^4,
+	\label{eq:AP:stefan_boltzmann_law}
+\end{equation}
+%
+where \(\sigma_{SB}\) is the Stefan-Boltzmann constant (\(5.67 \times 10^{-8}\) J/s/m\(^2\)/K\(^4\)).
+ Therefore, a unit area of the surface of a black body with uniform temperature radiates a power \(\sigma_{SB} T^4\).
+ Hence, a measured intensity (assuming the intermediary medium has no effect) can be related to temperature by
+%
+\begin{equation}
+	\pi I = \sigma_{SB} T^4_{\text{eff}},
+	\label{eq:AP:effective_temperature}
+\end{equation}
+%
+where \(T_{\text{eff}}\) is the `effective temperature'. We used equation \ref{eq:AP:flux} in the case that \(\theta_c = \pi / 2 \)to relate the flux to the intensity.
+ Again, the effective temperature is only equal to the actual temperature when the object being observed is emitting purely black body radiation.
+ Note also, that the size of the object should be known before the effective temperature can be determined.
+%
+%
+\subsection{Wien displacement law}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
