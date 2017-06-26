@@ -352,12 +352,48 @@ where \(T_{\text{eff}}\) is the `effective temperature'. We used equation \ref{e
 %
 %
 \subsection{Wien displacement law}
-
-
-
-
-
-
+The peak of the Planck function is temperature dependent and described by the Wien displacement law:
+%
+\begin{equation}
+	h \nu_\text{max} = 2.82144 k_B T,
+	k_B T \lambda_\text{max} = 0.201 h c.
+	\label{eq:AP:wien_displacement}
+\end{equation}
+%
+This implies that the colour of a black body is determined by its temperature. The \emph{colour temperature} of an object can be determined by finding the ratio of intensities measured at two frequencies. Once again, the colour temperature \emph{only} reflects the real temperature if the emitter is a black body.
+%
+%
+%
+\section{The fluid mechanics of shock waves}
+\subsection{Fluid mechanics and conservation laws}
+In previous chapters (see perhaps \texttt{Properties of Matter} or \texttt{Fluid Mechanics}), we have derived the basic fundamentals of fluid mechanics including the following conservation laws.
+%
+\subsubsection{Conservation of mass}
+The change in mass of a volume element is equal to the difference between the mass flowing into the element and the mass flowing out of the element.
+%
+\begin{equation}
+	\pdv{\rho}{t} + \rho \pdv{v}{x} + v \pdv{\rho}{x} = 0.
+	\label{eq:AP:continuity_equation}
+\end{equation}
+%
+The `continuity equation' (\ref{eq:AP:continuity_equation}) above assumes that the total amount of matter remains constant, and that the flow is in the \(x\) direction.
+%
+\subsubsection{Conservation of momentum}
+Here we consider all forces acting on a volume element and assume that they act in the\(x\) direction only.
+ These forces include pressure, gravity, magnetic, and other forces.
+ Only pressure is considered explicitly, the other forces are quantified with the force \(f\) per unit volume.
+%
+\begin{equation}
+	\rho \pdv{v}{t} + \rho v \pdv{v}{x} = -\pdv{P}{x} + f.
+	\label{eq:AP:momentum_conservation}
+\end{equation}
+%
+\subsubsection{Conservation of energy}
+The equation of energy conservation includes radiation, heat conduction, and pressure fluctuations.
+%
+\begin{equation}
+	\pdv{t}(\frac{1}{2}\rho v^2 + \frac{P}{\gamma - 1}) + \pdv{x}[v(\frac{1}{2}\rho v^2 + \frac{\gamma P}{\gamma - 1})] = -\rho v \pdv{x}\phi + \mathcal{L}
+\end{equation}
 
 
 
