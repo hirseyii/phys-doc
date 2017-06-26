@@ -392,13 +392,50 @@ Here we consider all forces acting on a volume element and assume that they act 
 The equation of energy conservation includes radiation, heat conduction, and pressure fluctuations.
 %
 \begin{equation}
-	\pdv{t}(\frac{1}{2}\rho v^2 + \frac{P}{\gamma - 1}) + \pdv{x}[v(\frac{1}{2}\rho v^2 + \frac{\gamma P}{\gamma - 1})] = -\rho v \pdv{x}\phi + \mathcal{L}
+	\pdv{t}(\frac{1}{2}\rho v^2 + \frac{P}{\gamma - 1}) + \pdv{x}(\left(v\frac{1}{2}\rho v^2 + \frac{\gamma P}{\gamma - 1}\right)) = -\rho v \pdv{x}\phi + \mathcal{L}
+	\label{eq:AP:energy_conservation} %REF Eq. 2.59 of Rosswog & Bruggen
 \end{equation}
-
-
-
-
-
+%
+This equation assumes that the fluid is an ideal gas with internal energy \(P/(\gamma -1)\rho\), where \(\gamma\) is the adiabatic index, and \(\phi\) is the potential corresponding to all other forces (except pressure) acting on the fluid.
+ Energy losses due to conduction, radiation, etc.\ are quantified by \(\mathcal{L}\) (power/unit volume).
+%
+\subsubsection{Equation of state}
+For an ideal gas, the equation of state is given by
+%
+\begin{equation}
+	P = \sum_{i}n_i k_B T = n k_B T \qquad \qq{(ideal gas)}
+	\label{eq:AP:ideal_gas}
+\end{equation}
+%
+Here we assume that the gas is in local thermal equilibrium.
+ Each particle species is summed over, however if the gas consists of pure hydrogen then the ideal gas equation becomes \(P = n_H k_B T\), whilst if the gas is fully ionised, \(P = (n_H + n_e)k_B T = 2n_H k_B T\).
+\par 
+If the gas is adiabatic, then the ideal gas law reduces to
+%
+\begin{equation}
+	P = K \rho^\gamma \qquad \qq{adiabatic \& ideal},
+	\label{eq:AP:adiabatic_ideal_gas}
+\end{equation}
+%
+where \(K\) is a constant, and \(\gamma\) is the adiabatic index (\(5/3\) for a monatomic gas).
+\par 
+If the gas is isothermal, then
+%
+\begin{equation}
+	P = K\rho \qquad \qq{isothermal \& ideal},
+	\label{eq:AP:isothermal_ideal_gas}
+\end{equation}
+%
+since the mass density is proportional to the number density of particles.
+ Therefore, an isothermal gas behaves as an adiabatic gas with \(\gamma = 1\).
+%
+%
+\subsection{Shock waves}
+Shock waves occur when perturbations in a gas propagate faster than the speed of sound of the medium (supersonically).
+ They play an important role in astrophysical processes such as star formation, high-velocity stellar winds, AGNs, etc.\
+ The shock wave, since it travels supersonically, no longer behaves as a wave and instead gives rise to discontinuities in the gas.
+%
+\subsubsection{Ram pressure}
 
 
 
