@@ -434,12 +434,29 @@ since the mass density is proportional to the number density of particles.
 Shock waves occur when perturbations in a gas propagate faster than the speed of sound of the medium (supersonically).
  They play an important role in astrophysical processes such as star formation, high-velocity stellar winds, AGNs, etc.\
  The shock wave, since it travels supersonically, no longer behaves as a wave and instead gives rise to discontinuities in the gas.
+ Shocks often occur when fast moving gas hits an obstacle (or the other way around).
 %
 \subsubsection{Ram pressure}
-
-
-
-
+Consider a solid object hitting a stationary gas.
+ In the frame of the object, gas hits it with a large velocity.
+ In this scenario we define `ram pressure' which is related to the transfer of momentum from the gas to the object.
+\par 
+The amount of mass flow though a surface element \(\dd{A}\) perpendicular to the velocity of the gas flow is given by
+%
+\[\dd{m} = \rho v \dd{t} \dd{A}.\]
+%
+Hence, the corresponding momentum flow through the surface is
+%
+\[\dd{m} v = \rho v^2 \dd{t} \dd{A}.\]
+%
+Given that \(F = \dv*{p}{t}\) and \(P = \flatfrac{F}(A)\) we can express this in terms of a pressure, with \(\dd{A}\) representing a surface element of the surface of the object.
+%
+\begin{equation}
+	P_\text{ram} = \rho v^2.
+	\label{eq:AP:ram_pressure}
+\end{equation}
+%
+\subsubsection{Sound waves \& Mach number}
 
 
 
