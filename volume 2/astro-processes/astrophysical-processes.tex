@@ -490,8 +490,50 @@ For normal sound waves, the perturbations are small.
  For large perturbations, the speed of sound can no longer be taken to be constant and will be different in different parts of the wave.
  If we consider adiabatic perturbations (eq. \ref{eq:AP:adiabatic_ideal_gas}), we find that
 %
-\[c_s = \sqrt{\gamma \frac{P}{\rho}} \propto \sqrt{\frac{\rho ^ \gamma}{\rho}} = \rho ^{\flatfrac{(\gamma - 1)}{2}}\]
-
+\begin{equation}
+	c_s = \sqrt{\gamma \frac{P}{\rho}} \propto \sqrt{\frac{\rho ^ \gamma}{\rho}} = \rho ^{\flatfrac{(\gamma - 1)}{2}}.
+	\label{eq:AP:sound_speed_density}
+\end{equation}
+%
+If a strong perturbation (e.g a fast moving piston, see figure \ref{fig:AP:shock_piston}) is produced then it induces an overdensity.
+\par
+%
+\begin{minipage}{0.47\textwidth}
+	\begin{figure}[H]
+		\includegraphics[width = \linewidth]{astro-processes/piston}
+		\caption{A graph of pressure against position of the piston.
+			 The graph on the right shows the piston after it has been moved rapidly against the gas.}
+		\label{fig:AP:shock_piston}
+	\end{figure}
+\end{minipage}
+%
+\begin{minipage}{0.47\textwidth}
+	The overdensity is greatest near the piston and decays asymptotically to the original density in front of the overdensity.
+	 This overdensity travels at the speed of sound which increases with density as shown in equation \ref{eq:AP:sound_speed_density}.
+	 As a result, it is inevitable that the overdensity tries to overtake the less dense gas further upstream.
+	 This leads to a sharper and sharper front being formed, resulting in, effectively, a discontinuity forming.
+	 The thickness of the transition region is determined by the micro-physics, and the mean free path of the particle.
+\end{minipage}
+%
+\par 
+In general, the structure of a shock is far more complicated than just a single discontinuity.
+ Consider the ejecta of a supernova explosion interacting with the ISM.
+ If the ejecta are supersonic, an outer shock will form (known as the `blast wave' of the supernova explosion).
+ The outer shock front pushes against the ISM which is accelerated as a result.
+ Therefore, on one side of the shock front, the ISM is stationary and not shocked, and on the other side the ISM is shocked and moves in the same direction as the blast wave.
+ Since the ISM is being accelerated, the ejecta must be losing kinetic energy; they are being slowed.
+ If the shock is strong enough, the deceleration of the ejecta takes place via a \emph{`reverse shock`} (for supernovae) or a \emph{`termination shock`} (for stellar winds).
+ Between the two shock fronts, there is a \emph{`contact discontinuity'} (\textbf{not} a shock) where the ISM and ejecta meet.
+ In an idealised case, there is no mixing of the two gases, and they are in pressure equilibrium.
+\par 
+In summary:
+%
+\begin{itemize}
+	\item Unshocked ejecta moves outwards rapidly.
+	\item The ejecta pass through the inner shock front, resulting in slower, shocked wind with velocity equal to the shocked ISM on the other side of the contact discontinuity.
+	\item The expanding (shocked) ISM is separated from the stationary ISM by the outer shock.
+\end{itemize}
+%
 
 
 
