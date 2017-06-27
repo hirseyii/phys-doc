@@ -403,7 +403,7 @@ This equation assumes that the fluid is an ideal gas with internal energy \(P/(\
 For an ideal gas, the equation of state is given by
 %
 \begin{equation}
-	P = \sum_{i}n_i k_B T = n k_B T \qquad \qq{(ideal gas)}
+	P = \sum_{i}n_i k_B T = n k_B T \qquad \qq{(ideal gas).}
 	\label{eq:AP:ideal_gas}
 \end{equation}
 %
@@ -413,7 +413,7 @@ Here we assume that the gas is in local thermal equilibrium.
 If the gas is adiabatic, then the ideal gas law reduces to
 %
 \begin{equation}
-	P = K \rho^\gamma \qquad \qq{adiabatic \& ideal},
+	P = K \rho^\gamma \qquad \qq{(adiabatic \& ideal),}
 	\label{eq:AP:adiabatic_ideal_gas}
 \end{equation}
 %
@@ -422,7 +422,7 @@ where \(K\) is a constant, and \(\gamma\) is the adiabatic index (\(5/3\) for a 
 If the gas is isothermal, then
 %
 \begin{equation}
-	P = K\rho \qquad \qq{isothermal \& ideal},
+	P = K\rho \qquad \qq{(isothermal \& ideal),}
 	\label{eq:AP:isothermal_ideal_gas}
 \end{equation}
 %
@@ -457,13 +457,40 @@ Given that \(F = \dv*{p}{t}\) and \(P = \flatfrac{F}(A)\) we can express this in
 \end{equation}
 %
 \subsubsection{Sound waves \& Mach number}
-
-
-
-
-
-
-
+To begin considering shock waves, we need to first define the speed of sound in a gas.
+ The speed of sound in an ideal gas (likely derived previously in the \texttt{Properties of Matter} chapter) is given by
+%
+\begin{equation}
+	c_s = \sqrt{\gamma \frac{P}{\rho}}.
+	\label{eq:AP:sound_speed_ideal}
+\end{equation}
+%
+Note that the speed of sound is the propagation velocity with respect to the medium.
+\par 
+Since the speed of sound is an important natural velocity in a medium, we often express velocities as a fraction of this speed.
+ This fraction is called the Mach number, and is defined as
+%
+\begin{equation}
+	\mathcal{M} = \frac{v}{c_s}.
+	\label{eq:AP:mach_number}
+\end{equation}
+%
+We can numerically evaluate \(c_s\) for pure hydrogen (assumed to be ideal)
+%
+\begin{equation}
+	c_s = 1.2 \sqrt{\frac{T}{100 \text{K}}} \text{km/s}.
+	\label{eq:AP:speed_sound_hydrogen}
+\end{equation}
+%
+For typical ISM temperatures (\(\sim 20 \text{K}\)), \(c_s \simeq 550\)m/s.
+ While this is fast in human scales, it is not difficult to produce shocks that exceed this speed in the ISM.
+%
+\subsubsection{The principles of shock waves}
+For normal sound waves, the perturbations are small.
+ For large perturbations, the speed of sound can no longer be taken to be constant and will be different in different parts of the wave.
+ If we consider adiabatic perturbations (eq. \ref{eq:AP:adiabatic_ideal_gas}), we find that
+%
+\[c_s = \sqrt{\gamma \frac{P}{\rho}} \propto \sqrt{\frac{\rho ^ \gamma}{\rho}} = \rho ^{\flatfrac{(\gamma - 1)}{2}}\]
 
 
 
