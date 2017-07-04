@@ -632,10 +632,72 @@ Here we take the adiabatic index \(\gamma = \frac{5}{3}\) which is valid for a m
 We can then substitute this into equation \ref{eq:AP:shock_energy_conserved} to obtain an equation that can be solved for \(v\).
 %
 \begin{align}
-	E &= \frac{1}{2} v^2 + \frac{5}{2} \left(\frac{v \mathcal{F}_\text{mom}}{\mathcal{F}_\text{mass}} - v^2\right)
+	E &= \frac{1}{2} v^2 + \frac{5}{2} \left(\frac{v \mathcal{F}_\text{mom}}{\mathcal{F}_\text{mass}} - v^2\right)		\nonumber
 	\linedrop
-	0 &= v^2 - \frac{5}{4} \frac{\mathcal{F}_\text{mom}}{\mathcal{F}_\text{mass}} v + \frac{1}{2} E
+	0 &= v^2 - \frac{5}{4} \frac{\mathcal{F}_\text{mom}}{\mathcal{F}_\text{mass}} v + \frac{1}{2} E						\nonumber
 \end{align}
+%
+We can solve this equation for \(v\) using the quadratic formula.
+ The two results correspond to the velocities of the gas before and after passing through the shock front.
+%
+\begin{equation}
+	v_\pm = \frac{\frac{5}{4} \frac{\mathcal{F}_\text{mom}}{\mathcal{F}_\text{mass}} \pm \sqrt{\left(-\frac{5}{4} \frac{\mathcal{F}_\text{mom}}{\mathcal{F}_\text{mass}}\right)^2 - 4 \frac{1}{2} E}}
+				{2}		\nonumber
+\end{equation}
+%
+By summing the solutions we can obtain an expression for the ratio of the velocities.
+%
+\begin{align}
+	v_1 + v_2 &= \frac{5}{4} \frac{\mathcal{F}_\text{mom}}{\mathcal{F}_\text{mass}}		\nonumber
+	\linedrop
+	\frac{v_2}{v_1} &= \frac{5}{4} \frac{\mathcal{F}_\text{mom}}{v_1 \mathcal{F}_\text{mass}} - 1
+	\label{eq:AP:shock_velocity_ratio}.
+\end{align}
+%
+Using the expressions for the conserved quantities (equations \ref{eq:AP:shock_mass_conserved} \& \ref{eq:AP:shock_momentum_conserved}) and choosing to express them in terms of the conditions in region 1, the ratio (eq. \ref{eq:AP:shock_velocity_ratio}) becomes
+%
+\begin{align*}
+	\frac{v_2}{v_1} &= \frac{5}{4} \frac{P_1 + \rho_1 v_1^2}{\rho_1 v_1^2} - 1		
+	\linedrop
+	&= \frac{5}{4} \frac{P_1}{\rho_1 v_1^2} + \frac{1}{4}	.						
+\end{align*}
+%
+Then, relating to the Mach number, \(\mathcal{M}_1\) in the unshocked medium using equations \ref{eq:AP:mach_number} \& \ref{eq:AP:sound_speed_density}
+%
+\begin{align*}
+	\mathcal{M}_1^2 &= \frac{v_1^2}{c_{s,1}^2}
+	\linedrop
+	&= \frac{v_1^2 \rho_1}{\gamma P_1}
+	\linedrop
+	&= \frac{3}{5} \frac{v_1^2 \rho_1}{P_1}.
+\end{align*}
+%
+Note that here we also substituted in for \(\gamma = \frac{5}{3}\).
+ The jump solution (eq. \ref{eq:AP:shock_velocity_ratio}) can now be expressed as
+%
+\begin{align*}
+	\frac{v_2}{v_1} &= \frac{5}{4} \left(\frac{3}{5} \frac{1}{\mathcal{M}_1^2}\right) + \frac{1}{4}
+	\linedrop
+	&= \frac{3}{4} \frac{1}{\mathcal{M}_1^2} + \frac{1}{4}.
+\end{align*}
+%
+In the limit \(\mathcal{M}_1 \ll 1\) (the highly supersonic, strong shock regime), we find that
+%
+\begin{equation}
+	\frac{v_2}{v_1} = \frac{1}{4},
+	\label{eq:AP:strong_shock_velocity_ratio}
+\end{equation}
+%
+hence in the frame of the shock, the shocked gas flows four times slower than the unshocked gas.
+ Also, using equation \ref{eq:AP:shock_mass_conserved} we can see that
+%
+\begin{equation}
+	\frac{\rho_2}{\rho_1} = 4,
+	\label{eq:AP:strong_shock_density_ratio}
+\end{equation}
+%
+which indicates that the gas is four times more dense after the shock to ensure that mass is conserved.
+
 
 
 
