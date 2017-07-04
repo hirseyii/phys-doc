@@ -697,9 +697,37 @@ hence in the frame of the shock, the shocked gas flows four times slower than th
 \end{equation}
 %
 which indicates that the gas is four times more dense after the shock to ensure that mass is conserved.
-
-
-
+%
+\subsubsection{Jump conditions in terms of Mach number for an ideal gas}
+We can generalise the results from the previous section for an arbitrary \(\gamma\), but retaining the ideal gas conditions.
+ The results follows without proof using a similar method to the one outlined above.
+%
+\begin{align}
+	\frac{\rho_2}{\rho_1} = \frac{v_1}{v_2} &= \frac{(\gamma + 1) \mathcal{M}_1^2}{(\gamma - 1) \mathcal{M}_1^2 + 2}
+	\label{eq:AP:shock_ratio_ideal}
+	\linedrop
+	\frac{P_2}{P_1} &= \frac{2 \gamma \mathcal{M}_1^2}{\gamma + 1} - \frac{\gamma - 1}{\gamma + 1}									\nonumber
+	\linedrop
+	\mathcal{M}_2^2 &= \frac{2 + (\gamma - 1) \mathcal{M}_1^2}{2 \gamma \mathcal{M}_1^2 - (\gamma - 1)}							\nonumber
+	\linedrop
+	\frac{T_2}{T_1} &= \frac{P_2}{P_1} \left(\frac{(\gamma + 1)P_1 + (\gamma - 1)P_2}{(\gamma - 1)P_1 + (\gamma + 1)P_2}\right)		\nonumber
+\end{align}
+%
+All shocks require that \(\mathcal{M}_1 > 1\) so from equation \ref{eq:AP:shock_ratio_ideal} we can see that
+%
+\begin{align}
+	\frac{\rho_2}{\rho_1} &= \frac{\gamma + 1}{\gamma - 1 + \flatfrac{2}{\mathcal{M}_1^2}}	
+			\nonumber
+	\linedrop
+	\frac{\rho_2}{\rho_1} &> \frac{\gamma + 1}{\gamma + 1} = 1.
+	\label{eq:AP:shock_density_ratio_limit}
+\end{align}
+%
+Therefore, a shock \emph{always} makes the gas more dense after the shock.
+ The stronger the shock, the greater the difference in density.
+ As \(\mathcal{M} \to 1\), we can see that the ratio of densities approaches \(1\) and the shock front disappears.
+ This is what happens when a shock slows to subsonic speeds.
+ 
 
 
 
