@@ -562,7 +562,172 @@ The relationship between the properties of the gas before and after the shock ar
 \subsubsection{Mass conservation}
 The mass of a unit of gas is conserved across the discontinuity.
  Hence, the amount of mass flowing through a unit area of shock front per unit time is conserved:
-
+%
+\[\rho_1 v_1 = \rho_2 v_2 \]
+%
+This is consistent with equation \ref{eq:AP:continuity_equation} however we must take care of derivatives when discontinuities are involved.
+ Noting that there are no explicit time dependencies, we can see that equation \ref{eq:AP:continuity_equation} becomes
+%
+\begin{align}
+	\rho \dv{v}{x} + v \dv{\rho}{x} &= 0	\nonumber
+	\linedrop
+	\dv{x}(\rho v) &= 0,					\nonumber
+	\label{eq:AP:shock_mass_conservation}
+\end{align} 
+%
+hence, writing this as a derivative for a step size of \(\Delta x\) which crosses the discontinuity gives
+%
+\begin{equation}
+	\frac{\rho_2 v_2 - \rho_1 v_1}{\Delta x} = 0.
+\end{equation}
+%
+This equation is satisfied for any arbitrary \(\Delta x\), and confirms the mass conservation condition over the discontinuity that we applied initially.
+%
+\subsubsection{Momentum conservation}
+We also require that momentum is conserved across the discontinuity which is simply given by
+%
+\begin{equation}
+	P_1 + \rho_1 v_1^2 = P_2 + \rho_2 v_2^2.
+	\label{eq:AP:shock_momentum_conservation}
+\end{equation}
+%
+\subsubsection{Energy conservation}
+Finally, we require energy to be conerved.
+ Starting with equation \ref{eq:AP:energy_conservation}, noting that there are no explicit time dependencies, assuming a nonradiative shock (\(\mathcal{L} = 0\)), and assuming that no external forces are present (\( \pdv*{\phi}{x} = 0 \)),
+%
+\[ \pdv{x}(v \left(\frac{1}{2} \rho v^2 + \frac{\gamma P}{\gamma - 1}\right)) = 0 \]
+%
+It is immediately apparent that 
+\begin{equation}
+	\frac{1}{2} v_1^2 + \frac{\gamma}{\gamma - 1 } \frac{P_1}{\rho_1} = \frac{1}{2} v_2^2 + \frac{\gamma}{\gamma - 1 } \frac{P_2}{\rho_2},
+	\label{eq:AP:shock_energy_conservation}
+\end{equation}
+%
+where the adiabatic index (\(\gamma\)) is assumed to be constant in the across the shocked and unshocked media.
+ The conserved quantity corresponds to the total \emph{specific} (per unit mass) energy of the gas.
+%
+\subsubsection{Jump conditions in terms of Mach number for a monatomic ideal gas}
+The Rankine-Hugeniot jump conditions ensure that mass, momentum, and energy are conserved, hence the following three quantities are conserved over the shock
+%
+\begin{align}
+	\mathcal{F}_\text{mass} &= \rho v,
+	\label{eq:AP:shock_mass_conserved}
+	\linedrop
+	\mathcal{F}_\text{mom} &= P + \rho v^2,
+	\label{eq:AP:shock_momentum_conserved}
+	\linedrop
+	E &= \frac{1}{2}v^2 + \frac{5}{2} \frac{P}{\rho}.
+	\label{eq:AP:shock_energy_conserved}
+\end{align}
+Here we take the adiabatic index \(\gamma = \frac{5}{3}\) which is valid for a monatomic ideal gas.
+ We can combine these equations to solve for \(v\).
+ First we solve equation \ref{eq:AP:shock_momentum_conserved} for \(\flatfrac{P}{\rho}\), which can be combined with equation \ref{eq:AP:shock_mass_conserved} to give
+%
+\begin{align}
+	\frac{P}{\rho} &= \frac{\mathcal{F}_\text{mom}}{\rho} - v^2 
+	\linedrop
+	&= \frac{v \mathcal{F}_\text{mom}}{\mathcal{F}_\text{mass}} - v^2
+\end{align}
+%
+We can then substitute this into equation \ref{eq:AP:shock_energy_conserved} to obtain an equation that can be solved for \(v\).
+%
+\begin{align}
+	E &= \frac{1}{2} v^2 + \frac{5}{2} \left(\frac{v \mathcal{F}_\text{mom}}{\mathcal{F}_\text{mass}} - v^2\right)		\nonumber
+	\linedrop
+	0 &= v^2 - \frac{5}{4} \frac{\mathcal{F}_\text{mom}}{\mathcal{F}_\text{mass}} v + \frac{1}{2} E						\nonumber
+\end{align}
+%
+We can solve this equation for \(v\) using the quadratic formula.
+ The two results correspond to the velocities of the gas before and after passing through the shock front.
+%
+\begin{equation}
+	v_\pm = \frac{\frac{5}{4} \frac{\mathcal{F}_\text{mom}}{\mathcal{F}_\text{mass}} \pm \sqrt{\left(-\frac{5}{4} \frac{\mathcal{F}_\text{mom}}{\mathcal{F}_\text{mass}}\right)^2 - 4 \frac{1}{2} E}}
+				{2}		\nonumber
+\end{equation}
+%
+By summing the solutions we can obtain an expression for the ratio of the velocities.
+%
+\begin{align}
+	v_1 + v_2 &= \frac{5}{4} \frac{\mathcal{F}_\text{mom}}{\mathcal{F}_\text{mass}}		\nonumber
+	\linedrop
+	\frac{v_2}{v_1} &= \frac{5}{4} \frac{\mathcal{F}_\text{mom}}{v_1 \mathcal{F}_\text{mass}} - 1
+	\label{eq:AP:shock_velocity_ratio}.
+\end{align}
+%
+Using the expressions for the conserved quantities (equations \ref{eq:AP:shock_mass_conserved} \& \ref{eq:AP:shock_momentum_conserved}) and choosing to express them in terms of the conditions in region 1, the ratio (eq. \ref{eq:AP:shock_velocity_ratio}) becomes
+%
+\begin{align*}
+	\frac{v_2}{v_1} &= \frac{5}{4} \frac{P_1 + \rho_1 v_1^2}{\rho_1 v_1^2} - 1		
+	\linedrop
+	&= \frac{5}{4} \frac{P_1}{\rho_1 v_1^2} + \frac{1}{4}	.						
+\end{align*}
+%
+Then, relating to the Mach number, \(\mathcal{M}_1\) in the unshocked medium using equations \ref{eq:AP:mach_number} \& \ref{eq:AP:sound_speed_density}
+%
+\begin{align*}
+	\mathcal{M}_1^2 &= \frac{v_1^2}{c_{s,1}^2}
+	\linedrop
+	&= \frac{v_1^2 \rho_1}{\gamma P_1}
+	\linedrop
+	&= \frac{3}{5} \frac{v_1^2 \rho_1}{P_1}.
+\end{align*}
+%
+Note that here we also substituted in for \(\gamma = \frac{5}{3}\).
+ The jump solution (eq. \ref{eq:AP:shock_velocity_ratio}) can now be expressed as
+%
+\begin{align*}
+	\frac{v_2}{v_1} &= \frac{5}{4} \left(\frac{3}{5} \frac{1}{\mathcal{M}_1^2}\right) + \frac{1}{4}
+	\linedrop
+	&= \frac{3}{4} \frac{1}{\mathcal{M}_1^2} + \frac{1}{4}.
+\end{align*}
+%
+In the limit \(\mathcal{M}_1 \ll 1\) (the highly supersonic, strong shock regime), we find that
+%
+\begin{equation}
+	\frac{v_2}{v_1} = \frac{1}{4},
+	\label{eq:AP:strong_shock_velocity_ratio}
+\end{equation}
+%
+hence in the frame of the shock, the shocked gas flows four times slower than the unshocked gas.
+ Also, using equation \ref{eq:AP:shock_mass_conserved} we can see that
+%
+\begin{equation}
+	\frac{\rho_2}{\rho_1} = 4,
+	\label{eq:AP:strong_shock_density_ratio}
+\end{equation}
+%
+which indicates that the gas is four times more dense after the shock to ensure that mass is conserved.
+%
+\subsubsection{Jump conditions in terms of Mach number for an ideal gas}
+We can generalise the results from the previous section for an arbitrary \(\gamma\), but retaining the ideal gas conditions.
+ The results follows without proof using a similar method to the one outlined above.
+%
+\begin{align}
+	\frac{\rho_2}{\rho_1} = \frac{v_1}{v_2} &= \frac{(\gamma + 1) \mathcal{M}_1^2}{(\gamma - 1) \mathcal{M}_1^2 + 2}
+	\label{eq:AP:shock_ratio_ideal}
+	\linedrop
+	\frac{P_2}{P_1} &= \frac{2 \gamma \mathcal{M}_1^2}{\gamma + 1} - \frac{\gamma - 1}{\gamma + 1}									\nonumber
+	\linedrop
+	\mathcal{M}_2^2 &= \frac{2 + (\gamma - 1) \mathcal{M}_1^2}{2 \gamma \mathcal{M}_1^2 - (\gamma - 1)}							\nonumber
+	\linedrop
+	\frac{T_2}{T_1} &= \frac{P_2}{P_1} \left(\frac{(\gamma + 1)P_1 + (\gamma - 1)P_2}{(\gamma - 1)P_1 + (\gamma + 1)P_2}\right)		\nonumber
+\end{align}
+%
+All shocks require that \(\mathcal{M}_1 > 1\) so from equation \ref{eq:AP:shock_ratio_ideal} we can see that
+%
+\begin{align}
+	\frac{\rho_2}{\rho_1} &= \frac{\gamma + 1}{\gamma - 1 + \flatfrac{2}{\mathcal{M}_1^2}}	
+			\nonumber
+	\linedrop
+	\frac{\rho_2}{\rho_1} &> \frac{\gamma + 1}{\gamma + 1} = 1.
+	\label{eq:AP:shock_density_ratio_limit}
+\end{align}
+%
+Therefore, a shock \emph{always} makes the gas more dense after the shock.
+ The stronger the shock, the greater the difference in density.
+ As \(\mathcal{M} \to 1\), we can see that the ratio of densities approaches \(1\) and the shock front disappears.
+ This is what happens when a shock slows to subsonic speeds.
+ 
 
 
 
