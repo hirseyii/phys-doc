@@ -1,12 +1,14 @@
 \chapter{Introduction to Photonics}
 \minitoc
+\textit{All material in this chapter was created using the notes of Dr. D. Graham.}
 \pagebreak
+
 \section{Measurement of light's power}
 
 There are two main ways of quantifying an electromagnetic waves power: radiometric and photometric.
 Photometric is how much power will be seen by the human eye, while radiometric is a direct measurement of the waves power.
 In these cases, light is defined as being in the visible spectrum although radiometry covers ultraviolet and infrared radiation.
-The photometric measurement uses a standard responsivity of the human eye which is defined by the $V(\lambda)$ curve  shown in figure \ref{fig:ItP:eye}.
+The photometric measurement uses a standard responsivity of the human eye which is defined by the $V(\lambda)$ curve shown in figure \ref{fig:ItP:eye}.
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{Photonics/eye}
 	\caption{The graph shows the curve for the photopic response, the black line, and the scotopic response, the green line, of a standard human eye}
@@ -18,7 +20,7 @@ There are two main types of responses: the scotopic (the green line) for an eye 
 %
 \begin{equation}
 	\phi_v = K\int{V(\lambda)\phi_e(\lambda)d\lambda},
-	\label{eq:luminous}
+	\label{eq:ItP:luminous}
 \end{equation}
 %
 where $K$ is the spectral luminous efficiency defined as $683$ lmW$^{-1}$.
@@ -30,7 +32,7 @@ For the most part the basics of polarisation are the same as in \textit{Wave Opt
  S- and p-polarised light mean the same thing as they do in \textit{Wave Optics}.
  \\
  \begin{figure}[H]
- 	\includegraphics[width=\linewidth,scale=0.6]{Photonics/pho_polarisation_1}
+ 	\includegraphics[width=15pt,scale=0.6]{Photonics/pho_polarisation_1}
  	
  	\label{fig:ItP:polarisation1}
  \end{figure}
@@ -48,7 +50,58 @@ R_p  = \left(\frac{\tan(\theta_i - \theta_t)}{\tan(\theta_i + \theta_t)}\right)^
  \end{equation}
 A beam can be made to be p-polarised by passing it through multiple glass plates as the s-polarised light will be reflected much more and after multiple plates will be effectively gone.
 \subsection{Birefringence}
-
+\begin{minipage}{0.5\linewidth}
+	\begin{figure} [H]
+		\includegraphics[width=\linewidth,scale=0.7]{Photonics/birefr_eg}
+		\label{fig:ItP:birefr_1}
+		%Issue with size, will get back to later
+	\end{figure}	
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+	Some materials have a special property which causes them to be birefringent. 
+	In this course, only uniaxial birefringece will be considered and this is where there are two refractive indices for the different polarisations. 
+	The birefringence gives rise to two different waves: ordinary rays (o-rays) and extraordinary rays (e-rays).
+	As the refractive indices for the waves aren't the same, they are refracted at different angles causing seperation and possibly two rays to exit the material, as shown in figure \ref{fig:ItP:birefr_1}.
+	As can be seen in the figure, the beams are orthogonally polarised.
+\end{minipage}
+As a side note: the e-ray does not follow Snell's Law.
+\\
+A useful way of visualising  the difference between the e and o-ray is by considering the Huygens wavelets of each ray. 
+\\
+\begin{minipage}{0.4\linewidth}
+	\begin{figure}[H]
+		\includegraphics[,width=150pt]{Photonics/erayhuygens}
+		\label{fig:ItP:bire_eray}
+		
+	%Yes I will make my own version of this, I'm just lazy atm even thought it is simple.
+	\end{figure}
+\end{minipage}
+\begin{minipage}{0.6\linewidth}
+	These wavelets will have a radius based on their speed in a particular direction which is polarisation dependent. 
+	For the o-ray the wavelet would be circular in shape as \(n_o\) is constant in all directions while the e-ray has a more ellipical wavelet due to the non constant refractive index \(n_e\).
+	The diagonal line going through the centre in figure \ref{fig:ItP:bire_eray} is the Optical Axis (OA) and is the direction in which both waves have the same refractive index.
+\end{minipage}
+The velocity of the e-ray along a direction is given by
+\begin{equation}
+	v_{e-ray} = \frac{v_ev_o}{\sqrt{v_o^2\sin[2](\theta)+v_e^2\cos[2](\theta)}}.
+	\label{eq:ItP:v_e-ray}
+\end{equation}
+\(v_e\) and \(v_o\) are the velocities of the rays in the direction that gives the largest radius of their respective wavelets.
+\(\theta\) is the angle between the OA and the e-ray.
+\subsubsection{Glan-Taylor beamsplitter}
+\begin{minipage}{0.5\linewidth}
+	\begin{figure}[H]
+	\includegraphics[scale=0.7]{Photonics/beamsplitter}
+	\end{figure}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+	The Glan-Taylor beamsplitter is one of the more common forms of beamsplitters and often made of two pieces of calcite with a glue interface seperating them.  
+	The OA is chosen so that it is perpendicular to the incoming light beam. 
+	This causes the e and o-rays to travel together until they reach the glue at which the two rays diverge. 
+	The o-ray is reflected while the e-ray refracts through the glue due to the differing refractive indices of the two rays.
+	The second calcite crystal is included to realign the beam after the glue.
+\end{minipage}
+\subsubsection{Retardation Plate}
 
  
 
