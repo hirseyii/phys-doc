@@ -102,7 +102,53 @@ The velocity of the e-ray along a direction is given by
 	The second calcite crystal is included to realign the beam after the glue.
 \end{minipage}
 \subsubsection{Retardation Plate}
-
+This is fairly similar to the beamsplitter although in this case there is no glue interface.
+The o- and e-rays therefore travel in the same direction through the beam, assuming the initial beam enters at \(90\deg\) to the face of the plate. 
+As they have differring refractive indices the rays will travel at different speeds creating a phase difference between the two.
+This phase difference, \(\Delta\phi\), is given by 
+\begin{equation}
+\Delta\phi = \frac{2\pi}{\lambda}\left(n_e - n_o\right)d
+\label{eq:ItP:phase_difference}
+\end{equation}
+where d is the length of the birefringent material which the rays travel through.
+This phase difference is where its name 'retardation plate' comes from.
+\\
+There are two special cases which will be considered in this course for the retardation plate: the quarter wave plate and the half wave plate.
+In the quarter wave plate case, 
+\begin{align*}
+\Delta\phi &= \abs{\frac{\pi}{2}} \\
+ \therefore \Delta{nd} &=\abs{\frac{\lambda}{4}} 
+\end{align*}
+where \(\Delta{n} = n_e-n_o\).
+If we recall from the form of circularly polarised light, we can see that the quarter wave plate transforms linearly polarised light into circular and vice versa. 
+This requires that the incident light is at an angle of \(45\deg\) to the OA. 
  
+\subsection{Jones Matrices and Vectors}
+To assist in the calculation of polarisation states we will introduce Jones matrices and vectors. 
+\\
+It is important to note that these only work with fully polarised light.
+\\
+Using an example polarised beam,
+\begin{align*}
+\vb{E}(z,t) &= E_x(z,t)\vb{i} + E-y(z,t)\vb{j}\\
+		&= e^{i(\omega{t} - kz)}\left[E_{0x}e^{i\phi_x} + E_{0y}e^{i\phi_y}\right]\\
+		&= \mqty[E_{0x}e^{i\phi_x} \\ E_{0y}e^{i\phi_y}]e^{i(\omega{t} -kz)} .
+\end{align*}
+The first term at the end is called the unnormalised Jones vector and the second term is a common factor to all polarisations so can be ignored.
+\\
+A simple polarisation state is along the x-axis, e.g. \(\theta = 0\), can be represented as 
+\[\vb{E}_0 = E_{0x}e^{i\phi_x}\mqty[1 \\ 0]\]
+which has no y-axis dependancy.
+It is vital to realise that the angle of polarisation is measured counter clockwise from the x-axis.
+\\
+Commonly, however, the normalised versions are used:
+\begin{align*}
+\vb{E}_0 &= \mqty[1 \\ 0]\\
+\vb{E}_{90} &= \mqty[0 \\ 1]\\
+\vb{E}_{45} &= \frac{1}{\sqrt{2}}\mqty[1 \\ 1]\\
+\vb{E}_{135} &= \frac{1}{\sqrt{2}}\mqty[1 \\ -1]\\
+\vb{E}_{RHC} &= \frac{1}{\sqrt{2}}\mqty[1 \\ -i]\\
+\vb{E}_{LHC} &= \frac{1}{\sqrt{2}}\mqty[1 \\ i]\\
+\end{align*}
 
 
