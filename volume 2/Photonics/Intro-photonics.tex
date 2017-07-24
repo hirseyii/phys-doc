@@ -101,7 +101,7 @@ The velocity of the e-ray along a direction is given by
 	The o-ray is reflected while the e-ray refracts through the glue due to the differing refractive indices of the two rays.
 	The second calcite crystal is included to realign the beam after the glue.
 \end{minipage}
-\subsubsection{Retardation Plate}
+\subsubsection{Retardation plate}
 This is fairly similar to the beamsplitter although in this case there is no glue interface.
 The o- and e-rays therefore travel in the same direction through the beam, assuming the initial beam enters at \(90\deg\) to the face of the plate. 
 As they have differring refractive indices the rays will travel at different speeds creating a phase difference between the two.
@@ -114,6 +114,7 @@ where d is the length of the birefringent material which the rays travel through
 This phase difference is where its name 'retardation plate' comes from.
 \\
 There are two special cases which will be considered in this course for the retardation plate: the quarter wave plate and the half wave plate.
+The half wave plate will be discussed later in the course.
 In the quarter wave plate case, 
 \begin{align*}
 \Delta\phi &= \abs{\frac{\pi}{2}} \\
@@ -122,12 +123,14 @@ In the quarter wave plate case,
 where \(\Delta{n} = n_e-n_o\).
 If we recall from the form of circularly polarised light, we can see that the quarter wave plate transforms linearly polarised light into circular and vice versa. 
 This requires that the incident light is at an angle of \(45\deg\) to the OA. 
+Conventionally, the retardation direction is called the \emph{slow} axis, and the phase advancement direction the \emph{fast} axis.
  
-\subsection{Jones Matrices and Vectors}
+\subsection{Jones matrices and vectors}
 To assist in the calculation of polarisation states we will introduce Jones matrices and vectors. 
 \\
 It is important to note that these only work with fully polarised light.
 \\
+\subsubsection{Beams of light}
 Using an example polarised beam,
 \begin{align*}
 \vb{E}(z,t) &= E_x(z,t)\vb{i} + E-y(z,t)\vb{j}\\
@@ -148,7 +151,50 @@ Commonly, however, the normalised versions are used:
 \vb{E}_{45} &= \frac{1}{\sqrt{2}}\mqty[1 \\ 1]\\
 \vb{E}_{135} &= \frac{1}{\sqrt{2}}\mqty[1 \\ -1]\\
 \vb{E}_{RHC} &= \frac{1}{\sqrt{2}}\mqty[1 \\ -i]\\
-\vb{E}_{LHC} &= \frac{1}{\sqrt{2}}\mqty[1 \\ i]\\
+\vb{E}_{LHC} &= \frac{1}{\sqrt{2}}\mqty[1 \\ i]\\.
 \end{align*}
-
-
+\subsubsection{Polarizers and wave plates}
+Polarizers and waveplates are represented by Jones matrices and normal matrix multiplication rules can be used to calculate the resulting polarisation state of light after passing through one or more.
+The general formula for the Jones matrix of a polarizer, polarised at an angle \(\theta\) to the x-axis, is:
+\begin{equation}
+A_J^{L\theta} = \mqty[\cos[2](\theta) & \sin(\theta)\cos(\theta) \\ \sin(\theta)\cos(\theta) & \sin[2](\theta)].
+\label{eqn:ItP:Polarizermat}
+\end{equation}
+The general Jones matrices for the quarter wave plates with horizontal and vertical fast axes are:
+\begin{align}
+A_J^{QH} &= e^{i\frac{\pi}{4}}\mqty[1 & 0 \\ 0 & i]  \label{eqn:ItP:QHmat} \\
+A_J^{QV} &= e^{i\frac{\pi}{4}}\mqty[1 & 0 \\ 0 & -i]. \label{eqn:ItP:QVmat}
+\end{align}
+The matrix for a half wave plate is:
+\begin{align}
+A_J^{H\theta} = \mqty[\cos 2\theta & \sin 2\theta \\ \sin 2\theta & -\cos 2\theta].
+\label{eqn:ItP:HwpMat}
+\end{align}
+\\
+When multiplying Jones matrices, the order is important.
+The left most matrix will be the matrix representing the last wave plate or polarizer that the beam of light passes through. 
+The right most matrix will likewise be the first that the light passes through.
+The Jones vector representing the beam of light will be the on the right of the last matrix.
+\subsection{Stokes parameters}
+These were introduced in *hesitantly guesses* \textit{Electromagnetism} in the form:
+\begin{align*}
+S_0 &= \abs{\vb{E}_x}^2 + \abs{\vb{E}_y}^2 = E_{0x}^2 + E_{0y}^2 \\
+S_1 &= \abs{\vb{E}_x}^2 - \abs{\vb{E}_y}^2 =  E_{0x}^2 - E_{0y}^2 \\
+S_2 &= 2\Re{\vb{E}_x\vb{E}_y^*} = 2E_{0x}E_{0y}\cos{\epsilon} \\
+S_3 &= 2\Im{\vb{E}_x\vb{E}_y^*} = 2E_{0x}E_{0y}\sin{\epsilon}
+\end{align*}
+where \(\epsilon\) is a potentially time variant phase as seen from the general wave equation:
+\begin{equation*}
+\vb{E}(z,t) = \Re{E_{0x}\vb{i}e^{i(\omega{t} - kz)} + E_{0y}\vb{j}e^{i(\omega{t} - kz + \epsilon)}}.
+\end{equation*}
+\\
+These can be normalised by dividing by \(S_0\) to get:
+\begin{align*}
+P_1 &= \frac{E_{0x}^2 - E_{0y}^2}{E_{0x}^2 + E_{0y}^2} \\
+P_2 &= \frac{2E_{0x}E_{0y}\cos{\epsilon}}{E_{0x}^2 + E_{0y}^2} \\
+P_3 &= \frac{2E_{0x}E_{0y}\sin{\epsilon}}{E_{0x}^2 + E_{0y}^2}.
+\end{align*}
+The degree of polarisation, \(P_{tot}\) is therefore defined as
+\[P_{tot}^2 = P_{1}^2 + P_{2}^2 + P_{3}^2\] 
+\[ 0 \leq P_{tot}^2 \leq 1\]
+where 0 is unpolarised and 1 is fully polarised.
