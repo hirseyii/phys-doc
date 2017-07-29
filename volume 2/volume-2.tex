@@ -13,6 +13,18 @@
 \usepackage{caption}
 \usepackage{minitoc}
 \usepackage{empheq}
+\usepackage{hyperref}
+\usepackage{physics}
+\usepackage{xparse}
+
+% fix equation labelling
+\numberwithin{equation}{section}
+
+% hyperref parameters
+\hypersetup{%
+	colorlinks=false,% hyperlinks will be black
+	pdfborderstyle={/S/U/W .8}% border style will be underline of width 1pt
+}
 
 % minitoc parameters
 
@@ -87,11 +99,16 @@
 %%%%%%%%%% CUSTOM MACROS %%%%%%%%%%
 % Align environment linedrop
 \newcommand*{\linedrop}{\\[0.5\baselineskip]}
+
+%(((((((((((((((((((((((( THE FOLLOWING ARE DEPRECIATED BY THE "physics" PACKAGE ))))))))))))))))))))))))
+
 % Dot product 
 \newcommand*{\dotp}{\boldsymbol{\cdot}}
 % derivative "d"
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
 \newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+%(((((((((((((((((((((((( ------------------------------------------------------ ))))))))))))))))))))))))
 
 %%%%% END PREABMLE %%%%%%
 
@@ -116,5 +133,10 @@
 % Astrophysical Processes chapter
 \include{astro-processes/astrophysical-processes}
 \include{complex/complex}
+\include{photonics/intro-photonics}
+
+
+
+
 
 \end{document}
