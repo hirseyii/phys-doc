@@ -197,3 +197,36 @@ The degree of polarisation, \(P_{tot}\) is therefore defined as
 \[P_{tot}^2 = P_{1}^2 + P_{2}^2 + P_{3}^2\] 
 \[ 0 \leq P_{tot}^2 \leq 1\]
 where 0 is unpolarised and 1 is fully polarised.
+\\
+These can also be calculated by measuring the intensity of the light at different polarisations:
+\begin{align*}
+P_1 &= \frac{I(0\degree) - I(90\degree)}{I(0\degree) + I(90\degree)} \\
+P_2 &= \frac{I(45\degree) - I(135\degree)}{I(45\degree) + I(135\degree)} \\ 
+P_3 &= \frac{I(RHS) - I(LHS)}{I(RHS) + I(LHS)}.
+\end{align*}
+If the initial electric field of the light is known then Jones matrices can be used to calculate the resultant intensities for different polarisations.
+Following from the \textit{Electromagnetism} course, it can be seen that \(P_1\) and  \(P_2 \) represent the linear polarisation and \(P_3\) the circular polarisation.
+\section{Production of Light}
+\subsection{Emission and absorption}
+Note: a large amount of this section is also covered in \textit{Astrophysical Processes}.
+\\
+There are two types of emission that are relevant to photonics: stimulated and spontaneous.
+\begin{minipage}{0.47\linewidth}
+	\begin{figure} [H]
+		\includegraphics[width = \linewidth]{Photonics/spontanemiss}
+	\end{figure}
+\end{minipage}
+\begin{minipage}{0.47\linewidth}
+	Spontaneous occurs when an electron randomly decays from an excited state to the ground state.
+	This releases a photon with energy equal to the difference between the two states. 
+\end{minipage}
+\\
+\begin{minipage}{0.47\linewidth}
+	\begin{figure} [H]
+		\includegraphics[width = \linewidth]{Photonics/stimuemiss}
+	\end{figure}
+\end{minipage}
+\begin{minipage}{0.47\linewidth}
+	Stimulated emission on the other hand arises when a photon passes close by an electron causing it to decay. This releases a photon identical to the incident photon. This does require that the incident photon has the same energy as the difference between the two states. 
+\end{minipage}
+\\
